@@ -1,0 +1,329 @@
+module DDS_CONFIG(CEN,CLK,F1H,F1L,F2H,F2L,MODE,DFW,RAMPRATE,AOUT,DOUT,READY,RESET,WRITE);
+	//控制信号
+	input		CEN;
+	input 	CLK; 
+	
+	//传入参数
+	input    [15:0]F1H;
+	input    [31:0]F1L;
+	input    [15:0]F2H;
+	input    [31:0]F2L;
+	input 	[2:0]MODE; 
+	input 	[47:0]DFW;
+	input		[19:0]RAMPRATE;
+	
+	//输出信号
+	output   WRITE;
+	output	[4:0]AOUT;
+	output	[7:0]DOUT;	
+	output   RESET;
+	output	READY;
+	
+	reg		READY;
+	reg		COUNTEREN;
+	reg 		RESET;
+	reg		[15:0]FTW1H;
+	reg		[31:0]FTW1L;
+	reg		[15:0]FTW2H;
+	reg		[31:0]FTW2L;
+	reg		[:0]
+	reg      [7:0]DOUT;
+	reg      [4:0]AOUT;
+	reg		[6:0]STEP;
+	reg		WREN;
+	reg		WRITE;
+	
+	always @(posedge CLK)
+	begin
+	  if((CEN==1&&COUNTEREN==1)||(CEN==0&&COUNTEREN==1))
+	  begin
+		case(STEP)
+		0:
+			begin
+				READY=0;
+				COUNTEREN=7'b1;
+				WRITE=0;										//初始化并口写入信号
+				FSKDATA=0;									//初始化频移信号
+				WREN=1;										//启动并口写入信号刷新
+				//UDCLK=0;									//初始化更新时钟
+				FTW1H=F1H;									//获取频率控制字1高16位
+				FTW1L=F1L;									//获取频率控制字1低32位
+				if(MODE!=3'B000)							//如果为扫频模式
+				begin
+				FTW2H=F2H;									//获取频率控制字2高16位
+				FTW2L=F2L;									//获取频率控制字2低32位				
+				end
+				RESET=1'b1;									//启动初始化重启信号
+			end
+		1:
+			begin
+				RESET=0;										//结束初始化重启信号
+				AOUT=5'H1F;		
+				DOUT={1'b0,MODE,1'b0,1'b0,1'b0,1'b0};//设置模式=外部时钟更新,设置模式,非三角波输出
+			end
+		4:
+			begin
+				AOUT=5'H09;		
+				DOUT=FTW1L[7:0];							//频率控制字1低位-0~7位	
+			end
+		7:
+			begin
+				AOUT=5'H08;		
+				DOUT=FTW1L[15:8];							//频率控制字1低位-8~15位				
+			end
+		10:
+			begin
+				AOUT=5'H07;		
+				DOUT=FTW1L[23:16];  						//频率控制字1低位-16~23位								
+			end
+		13:
+			begin
+				AOUT=5'H06;		
+				DOUT=FTW1L[31:24];  						//频率控制字1低位-24~31位					
+			end
+		16:
+			begin
+				AOUT=5'H05;		
+				DOUT=FTW1H[7:0];  						//频率控制字1高位-32~39位								
+			end
+		19:
+			begin
+				AOUT=5'H04;		
+				DOUT=FTW1H[15:8];  						//频率控制字1高位-40~47位		
+			end
+		21:
+			begin
+				if(MODE!=3'B000)							//如果为扫频模式
+				begin
+				AOUT=5'H0F;		
+				DOUT=FTW2L[7:0];							//频率控制字2低位-0~7位
+				end	
+			else
+				begin
+				//UDCLK=1;									//否则启动更新时钟
+				AOUT=0;
+				DOUT=0;
+				COUNTEREN=0;
+				WREN=0;										//禁止并口写入信号
+				end
+			end
+		24:
+			begin
+				if(MODE!=3'B000)
+				begin
+				AOUT=5'H0E;		
+				DOUT=FTW2L[15:8];							//频率控制字2低位-8~15位
+				end
+			end
+		27:
+			begin
+				if(MODE!=3'B000)
+				begin
+				AOUT=5'H0D;		
+				DOUT=FTW2L[23:16];  						//频率控制字2低位-16~23位
+				end
+			end
+		30:
+			begin
+				if(MODE!=3'B000)
+				begin
+				AOUT=5'H0C;		
+				DOUT=FTW2L[31:24];  						//频率控制字2低位-24~31位
+				end
+			end
+		33:
+			begin
+				if(MODE!=3'B000)
+				begin
+				AOUT=5'H0B;		
+				DOUT=FTW2H[7:0];  						//频率控制字2高位-32~39位								
+				end
+			end
+		36:
+			begin
+				if(MODE!=3'B000)
+				begin
+				AOUT=5'H0A;		
+				DOUT=FTW2H[15:8];  						//频率控制字2低位-40~47位
+				end
+			end
+		39:
+			begin
+			case(MODE)
+			3'b001:											//非连续扫频
+				begin
+				READY=1;									//启动更新时钟
+				WREN=0;										//否则禁止并口写入信号	
+				end
+			3'b010:											//连续扫频模式
+				begin
+				AOUT=5'H15;		
+				DOUT=DFW[7:0];								//阶越扫频模式-阶越大小控制字
+				end
+			3'b011:
+				begin
+				end
+			endcase
+			end
+		42:
+			begin
+			case(MODE)
+			3'b010:
+				begin
+				AOUT=5'H14;		
+				DOUT=DFW[15:8];							//阶越扫频模式-阶越大小控制字
+				end
+			3'b011:
+				begin
+				end
+			endcase
+			end
+		45:
+			begin
+			case(MODE)
+			3'b010:
+				begin
+				AOUT=5'H13;		
+				DOUT=DFW[23:16];							//阶越扫频模式-阶越大小控制字
+				end
+			3'b011:
+				begin
+				end
+			endcase
+			end
+		48:
+			begin
+			case(MODE)
+			3'b010:
+				begin
+				AOUT=5'H12;		
+				DOUT=DFW[31:24];							//阶越扫频模式-阶越大小控制字
+				end
+			3'b011:
+				begin
+				end
+			endcase
+			end
+		51:
+			begin
+			case(MODE)
+			3'b010:
+				begin
+				AOUT=5'H11;		
+				DOUT=DFW[39:32];							//阶越扫频模式-阶越大小控制字
+				end
+			3'b011:
+				begin
+				end
+			endcase
+			end
+		54:
+			begin
+			case(MODE)
+			3'b010:
+				begin
+				AOUT=5'H10;		
+				DOUT=DFW[47:40];							//阶越扫频模式-阶越大小控制字
+				end
+			3'b011:
+				begin
+				end
+			endcase
+			end
+		57:
+			begin
+			case(MODE)
+			3'b010:
+				begin
+				AOUT=5'H1C;		
+				DOUT=RAMPRATE[7:0];						//阶越扫频模式-阶越频率
+				end
+			3'b011:
+				begin
+				end
+			endcase
+			end
+		60:
+			begin
+			case(MODE)
+			3'b010:
+				begin
+				AOUT=5'H1B;		
+				DOUT=RAMPRATE[15:8];						//阶越扫频模式-阶越频率
+				end
+			3'b011:
+				begin
+				end
+			endcase
+			end
+		63:
+			begin
+			case(MODE)
+			3'b010:
+				begin
+				AOUT=5'H1A;		
+				DOUT=RAMPRATE[19:16];					//阶越扫频模式-阶越频率
+				end
+			3'b011:
+				begin
+				end			
+			endcase
+			end
+		66:
+			begin
+			READY=1;
+			end
+		default:
+			begin
+			if(WREN==1)
+			WRITE=~WRITE;									//跳变并口写入信号,进行数据刷新
+			else
+			WRITE=0;
+			end
+		endcase
+		if((COUNTEREN==1&&CEN==1)||(COUNTEREN==1&&CEN==0))
+			begin
+			STEP=STEP+1'b1;
+		   end
+		else
+			begin
+			COUNTEREN=0;
+			STEP=7'b0;
+			READY=0;
+			WRITE=0;
+		end
+	end
+	else
+	   begin
+		COUNTEREN=CEN;
+	   STEP=7'b0;
+		READY=0;
+	   end 
+	end 
+endmodule
+
+module DDS_UPDATE_CYCLE(CLK,CYCLE,UEN,UDCLK);
+	input 	UEN;
+	input		CLK;
+	input		[31:0]CYCLE;
+	
+	reg		[31:0]CYCLEREG;
+	output 	UDCLK;
+	reg		UDCLK;
+	
+	always@(CLK)
+	begin
+		if(UEN)
+		begin
+			if(CYCLEREG==0)
+				begin
+				CYCLEREG=CYCLE;
+				end
+			else
+				begin
+				UDCLK=~UDCLK;
+				CYCLEREG=CYCLEREG-1;
+				end
+		end
+	end
+endmodule

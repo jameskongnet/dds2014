@@ -1,0 +1,25 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\dds\simulation\modelsim
+vtranslate
+!i10b 1
+!s100 NlPhT0N6SNHCfc^>PeXJh0
+IL3Y`fF;z?SH=k8C1_PD9a2
+V_Z<T=^[<PVLi;JnYdYRg]3
+Z1 dD:\dds\simulation\modelsim
+w1386250469
+8D:/2013system/translate.v
+FD:/2013system/translate.v
+L0 1
+OV;L;10.1d;51
+r1
+!s85 0
+31
+!s108 1386250941.333000
+!s107 D:/2013system/translate.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/2013system|D:/2013system/translate.v|
+!s101 -O0
+o-vlog01compat -work work -O0
+!s92 -vlog01compat -work work +incdir+D:/2013system -O0

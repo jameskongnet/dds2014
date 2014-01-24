@@ -1,0 +1,162 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.2"))
+(symbol
+	(rect 0 0 240 296)
+	(text "remoteud" (rect 94 0 157 16)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 280 25 292)(font "Arial" ))
+	(port
+		(pt 0 40)
+		(input)
+		(text "read_param" (rect 0 0 68 14)(font "Arial" (font_size 8)))
+		(text "read_param" (rect 20 33 76 46)(font "Arial" (font_size 8)))
+		(line (pt 0 40)(pt 16 40))
+	)
+	(port
+		(pt 0 56)
+		(input)
+		(text "write_param" (rect 0 0 71 14)(font "Arial" (font_size 8)))
+		(text "write_param" (rect 20 49 79 62)(font "Arial" (font_size 8)))
+		(line (pt 0 56)(pt 16 56))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "param[2..0]" (rect 0 0 63 14)(font "Arial" (font_size 8)))
+		(text "param[2..0]" (rect 20 73 72 86)(font "Arial" (font_size 8)))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "data_in[21..0]" (rect 0 0 76 14)(font "Arial" (font_size 8)))
+		(text "data_in[21..0]" (rect 20 89 83 102)(font "Arial" (font_size 8)))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 0 120)
+		(input)
+		(text "reconfig" (rect 0 0 47 14)(font "Arial" (font_size 8)))
+		(text "reconfig" (rect 20 113 58 126)(font "Arial" (font_size 8)))
+		(line (pt 0 120)(pt 16 120))
+	)
+	(port
+		(pt 0 136)
+		(input)
+		(text "reset_timer" (rect 0 0 63 14)(font "Arial" (font_size 8)))
+		(text "reset_timer" (rect 20 129 72 142)(font "Arial" (font_size 8)))
+		(line (pt 0 136)(pt 16 136))
+	)
+	(port
+		(pt 0 152)
+		(input)
+		(text "read_source[1..0]" (rect 0 0 101 14)(font "Arial" (font_size 8)))
+		(text "read_source[1..0]" (rect 20 145 104 158)(font "Arial" (font_size 8)))
+		(line (pt 0 152)(pt 16 152)(line_width 3))
+	)
+	(port
+		(pt 0 176)
+		(input)
+		(text "clock" (rect 0 0 29 14)(font "Arial" (font_size 8)))
+		(text "clock" (rect 20 169 43 182)(font "Arial" (font_size 8)))
+		(line (pt 0 176)(pt 16 176))
+	)
+	(port
+		(pt 0 192)
+		(input)
+		(text "reset" (rect 0 0 29 14)(font "Arial" (font_size 8)))
+		(text "reset" (rect 20 185 43 198)(font "Arial" (font_size 8)))
+		(line (pt 0 192)(pt 16 192))
+	)
+	(port
+		(pt 0 216)
+		(input)
+		(text "asmi_busy" (rect 0 0 61 14)(font "Arial" (font_size 8)))
+		(text "asmi_busy" (rect 20 209 70 222)(font "Arial" (font_size 8)))
+		(line (pt 0 216)(pt 16 216))
+	)
+	(port
+		(pt 0 232)
+		(input)
+		(text "asmi_data_valid" (rect 0 0 90 14)(font "Arial" (font_size 8)))
+		(text "asmi_data_valid" (rect 20 225 95 238)(font "Arial" (font_size 8)))
+		(line (pt 0 232)(pt 16 232))
+	)
+	(port
+		(pt 0 248)
+		(input)
+		(text "asmi_dataout[7..0]" (rect 0 0 103 14)(font "Arial" (font_size 8)))
+		(text "asmi_dataout[7..0]" (rect 20 241 106 254)(font "Arial" (font_size 8)))
+		(line (pt 0 248)(pt 16 248)(line_width 3))
+	)
+	(port
+		(pt 240 40)
+		(output)
+		(text "busy" (rect 0 0 28 14)(font "Arial" (font_size 8)))
+		(text "busy" (rect 197 33 219 46)(font "Arial" (font_size 8)))
+		(line (pt 240 40)(pt 224 40))
+	)
+	(port
+		(pt 240 96)
+		(output)
+		(text "data_out[28..0]" (rect 0 0 84 14)(font "Arial" (font_size 8)))
+		(text "data_out[28..0]" (rect 149 89 219 102)(font "Arial" (font_size 8)))
+		(line (pt 240 96)(pt 224 96)(line_width 3))
+	)
+	(port
+		(pt 240 136)
+		(output)
+		(text "pof_error" (rect 0 0 54 14)(font "Arial" (font_size 8)))
+		(text "pof_error" (rect 175 129 219 142)(font "Arial" (font_size 8)))
+		(line (pt 240 136)(pt 224 136))
+	)
+	(port
+		(pt 240 152)
+		(output)
+		(text "asmi_addr[23..0]" (rect 0 0 94 14)(font "Arial" (font_size 8)))
+		(text "asmi_addr[23..0]" (rect 141 145 219 158)(font "Arial" (font_size 8)))
+		(line (pt 240 152)(pt 224 152)(line_width 3))
+	)
+	(port
+		(pt 240 168)
+		(output)
+		(text "asmi_read" (rect 0 0 59 14)(font "Arial" (font_size 8)))
+		(text "asmi_read" (rect 171 161 219 174)(font "Arial" (font_size 8)))
+		(line (pt 240 168)(pt 224 168))
+	)
+	(port
+		(pt 240 184)
+		(output)
+		(text "asmi_rden" (rect 0 0 59 14)(font "Arial" (font_size 8)))
+		(text "asmi_rden" (rect 171 177 219 190)(font "Arial" (font_size 8)))
+		(line (pt 240 184)(pt 224 184))
+	)
+	(drawing
+		(line (pt 0 0)(pt 242 0))
+		(line (pt 242 0)(pt 242 298))
+		(line (pt 0 298)(pt 242 298))
+		(line (pt 0 0)(pt 0 298))
+		(line (pt 16 24)(pt 226 24))
+		(line (pt 226 24)(pt 226 274))
+		(line (pt 16 274)(pt 226 274))
+		(line (pt 16 24)(pt 16 274))
+	)
+)

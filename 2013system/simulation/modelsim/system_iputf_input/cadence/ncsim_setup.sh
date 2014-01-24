@@ -1,0 +1,3 @@
+
+
+ncvlog "D:/2013system/mac_sim/mac.v"

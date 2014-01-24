@@ -1,0 +1,25 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\2013system\simulation\modelsim
+vsystem
+!i10b 1
+!s100 FcnJ@C;gm`87X:Y8g9L@]2
+I4H4VARd5M?fgSWb2PlgLz0
+VXdjQN0a0XnMKN<9G>V2im3
+Z1 dD:\2013system\simulation\modelsim
+w1385701018
+8system.vo
+Fsystem.vo
+L0 31
+OV;L;10.1d;51
+r1
+!s85 0
+31
+!s108 1385701433.247000
+!s107 system.vo|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+.|system.vo|
+!s101 -O0
+o-vlog01compat -work work -O0
+!s92 -vlog01compat -work work +incdir+. -O0

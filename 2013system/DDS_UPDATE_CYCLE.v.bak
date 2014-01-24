@@ -1,0 +1,25 @@
+module DDS_UPDATE_CYCLE(CLK,CYCLE,UEN,UDCLK);
+	input 	UEN;
+	input		CLK;
+	input		[31:0]CYCLE;
+	
+	reg		[31:0]CYCLEREG;
+	output 	UDCLK;
+	reg		UDCLK;
+	
+	always@(CLK)
+	begin
+		if(UEN)
+		begin
+			if(CYCLEREG==0)
+				begin
+				CYCLEREG=CYCLE;
+				end
+			else
+				begin
+				UDCLK=~UDCLK;
+				CYCLEREG=CYCLEREG-1;
+				end
+		end
+	end
+endmodule

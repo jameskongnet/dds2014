@@ -1,0 +1,127 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\2013system\simulation\modelsim
+vDDS_CONFIG
+IFBC?YgBb5Q22d53JP<@fo3
+Vk11K]m?Dzf6e5DnAY[z:U2
+Z1 dD:\2013system\simulation\modelsim
+w1386163538
+8D:/2013system/DDS_CONFIG.v
+FD:/2013system/DDS_CONFIG.v
+L0 1
+Z2 OV;L;10.1d;51
+r1
+31
+Z3 o-vlog01compat -work work -O0
+Z4 !s92 -vlog01compat -work work +incdir+D:/2013system -O0
+n@d@d@s_@c@o@n@f@i@g
+!i10b 1
+!s100 bDSien]L=YH[z6f>5SR7P3
+!s85 0
+!s108 1386163748.352000
+!s107 D:/2013system/DDS_CONFIG.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/2013system|D:/2013system/DDS_CONFIG.v|
+!s101 -O0
+vDDS_UPDATE_CYCLE
+IYeGigKVob0:i<AmbhcfCD3
+V1Ld^5[KSBWanG;jDMOGLl3
+R1
+w1384921005
+8D:/2013system/DDS_UPDATE_CYCLE.v
+FD:/2013system/DDS_UPDATE_CYCLE.v
+L0 1
+R2
+r1
+31
+R3
+R4
+n@d@d@s_@u@p@d@a@t@e_@c@y@c@l@e
+!i10b 1
+!s100 VZXaN4Vfh`U?^[H=DJT;?0
+!s85 0
+!s108 1386163748.518000
+!s107 D:/2013system/DDS_UPDATE_CYCLE.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/2013system|D:/2013system/DDS_UPDATE_CYCLE.v|
+!s101 -O0
+vpll
+Id6QZ5mcEb_dezWKDm>JP43
+VYgSHNCM?nBg`07nDCX6H00
+R1
+w1386162171
+8D:/2013system/pll.v
+FD:/2013system/pll.v
+L0 39
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 gjnT^YH:oW7;Mcem9mEF:3
+!s85 0
+!s108 1386163748.659000
+!s107 D:/2013system/pll.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/2013system|D:/2013system/pll.v|
+!s101 -O0
+vpll_altpll
+!i10b 1
+!s100 >=Xg::bg24@SY`h;hBLPE3
+I]282@9_ld0]G:0JClLRH72
+V]G_hHeBO>EEiH1U=;mR^d1
+R1
+w1386162335
+8D:/2013system/db/pll_altpll.v
+FD:/2013system/db/pll_altpll.v
+L0 29
+R2
+r1
+!s85 0
+31
+!s108 1386163748.814000
+!s107 D:/2013system/db/pll_altpll.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/2013system/db|D:/2013system/db/pll_altpll.v|
+!s101 -O0
+R3
+!s92 -vlog01compat -work work +incdir+D:/2013system/db -O0
+vsystem
+IF`jdOI@Dh[]m3i?6O0>ag0
+VXdjQN0a0XnMKN<9G>V2im3
+R1
+w1386162185
+8D:/2013system/system.v
+FD:/2013system/system.v
+L0 19
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 oAO;^4C2jHQ2MA4ZLIOMG1
+!s85 0
+!s108 1386163748.108000
+!s107 D:/2013system/system.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/2013system|D:/2013system/system.v|
+!s101 -O0
+vtestcore
+I>d11TmzZH?eO^zOj8hTl10
+VcTRYWoo`>@09S0Qj]gE>@0
+R1
+w1386158131
+8D:/2013system/core.v
+FD:/2013system/core.v
+L0 1
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 UkIJ;i:OhJ;0J_::LcKSA1
+!s85 0
+!s108 1386163748.229000
+!s107 D:/2013system/core.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/2013system|D:/2013system/core.v|
+!s101 -O0

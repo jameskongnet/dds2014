@@ -1,0 +1,169 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 16 16 352 384)
+	(text "testcore" (rect 5 0 36 12)(font "Arial" ))
+	(text "inst" (rect 8 352 20 364)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "CLKIN" (rect 0 0 29 12)(font "Arial" ))
+		(text "CLKIN" (rect 21 27 50 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 336 32)
+		(output)
+		(text "SHK" (rect 0 0 20 12)(font "Arial" ))
+		(text "SHK" (rect 295 27 315 39)(font "Arial" ))
+		(line (pt 336 32)(pt 320 32)(line_width 1))
+	)
+	(port
+		(pt 336 48)
+		(output)
+		(text "CEN" (rect 0 0 21 12)(font "Arial" ))
+		(text "CEN" (rect 294 43 315 55)(font "Arial" ))
+		(line (pt 336 48)(pt 320 48)(line_width 1))
+	)
+	(port
+		(pt 336 64)
+		(output)
+		(text "F1H[15..0]" (rect 0 0 40 12)(font "Arial" ))
+		(text "F1H[15..0]" (rect 275 59 315 71)(font "Arial" ))
+		(line (pt 336 64)(pt 320 64)(line_width 3))
+	)
+	(port
+		(pt 336 80)
+		(output)
+		(text "F1L[31..0]" (rect 0 0 38 12)(font "Arial" ))
+		(text "F1L[31..0]" (rect 277 75 315 87)(font "Arial" ))
+		(line (pt 336 80)(pt 320 80)(line_width 3))
+	)
+	(port
+		(pt 336 96)
+		(output)
+		(text "F2H[15..0]" (rect 0 0 41 12)(font "Arial" ))
+		(text "F2H[15..0]" (rect 274 91 315 103)(font "Arial" ))
+		(line (pt 336 96)(pt 320 96)(line_width 3))
+	)
+	(port
+		(pt 336 112)
+		(output)
+		(text "F2L[31..0]" (rect 0 0 40 12)(font "Arial" ))
+		(text "F2L[31..0]" (rect 275 107 315 119)(font "Arial" ))
+		(line (pt 336 112)(pt 320 112)(line_width 3))
+	)
+	(port
+		(pt 336 128)
+		(output)
+		(text "PTW1[13..0]" (rect 0 0 49 12)(font "Arial" ))
+		(text "PTW1[13..0]" (rect 266 123 315 135)(font "Arial" ))
+		(line (pt 336 128)(pt 320 128)(line_width 3))
+	)
+	(port
+		(pt 336 144)
+		(output)
+		(text "PTW2[13..0]" (rect 0 0 50 12)(font "Arial" ))
+		(text "PTW2[13..0]" (rect 265 139 315 151)(font "Arial" ))
+		(line (pt 336 144)(pt 320 144)(line_width 3))
+	)
+	(port
+		(pt 336 160)
+		(output)
+		(text "TRAIANGLE" (rect 0 0 60 12)(font "Arial" ))
+		(text "TRAIANGLE" (rect 255 155 315 167)(font "Arial" ))
+		(line (pt 336 160)(pt 320 160)(line_width 1))
+	)
+	(port
+		(pt 336 176)
+		(output)
+		(text "MODE[2..0]" (rect 0 0 49 12)(font "Arial" ))
+		(text "MODE[2..0]" (rect 266 171 315 183)(font "Arial" ))
+		(line (pt 336 176)(pt 320 176)(line_width 3))
+	)
+	(port
+		(pt 336 192)
+		(output)
+		(text "DFW[47..0]" (rect 0 0 49 12)(font "Arial" ))
+		(text "DFW[47..0]" (rect 266 187 315 199)(font "Arial" ))
+		(line (pt 336 192)(pt 320 192)(line_width 3))
+	)
+	(port
+		(pt 336 208)
+		(output)
+		(text "RAMPRATE[19..0]" (rect 0 0 83 12)(font "Arial" ))
+		(text "RAMPRATE[19..0]" (rect 232 203 315 215)(font "Arial" ))
+		(line (pt 336 208)(pt 320 208)(line_width 3))
+	)
+	(port
+		(pt 336 224)
+		(output)
+		(text "PLLEN" (rect 0 0 31 12)(font "Arial" ))
+		(text "PLLEN" (rect 284 219 315 231)(font "Arial" ))
+		(line (pt 336 224)(pt 320 224)(line_width 1))
+	)
+	(port
+		(pt 336 240)
+		(output)
+		(text "CLKMUILT[4..0]" (rect 0 0 70 12)(font "Arial" ))
+		(text "CLKMUILT[4..0]" (rect 245 235 315 247)(font "Arial" ))
+		(line (pt 336 240)(pt 320 240)(line_width 3))
+	)
+	(port
+		(pt 336 256)
+		(output)
+		(text "PLLRANGE" (rect 0 0 55 12)(font "Arial" ))
+		(text "PLLRANGE" (rect 260 251 315 263)(font "Arial" ))
+		(line (pt 336 256)(pt 320 256)(line_width 1))
+	)
+	(port
+		(pt 336 272)
+		(output)
+		(text "CYCLE[31..0]" (rect 0 0 57 12)(font "Arial" ))
+		(text "CYCLE[31..0]" (rect 258 267 315 279)(font "Arial" ))
+		(line (pt 336 272)(pt 320 272)(line_width 3))
+	)
+	(port
+		(pt 336 288)
+		(output)
+		(text "UD_DELAY_CLK_CYCLE[31..0]" (rect 0 0 145 12)(font "Arial" ))
+		(text "UD_DELAY_CLK_CYCLE[31..0]" (rect 170 283 315 295)(font "Arial" ))
+		(line (pt 336 288)(pt 320 288)(line_width 3))
+	)
+	(port
+		(pt 336 304)
+		(output)
+		(text "FSKDATA_BPSK_HOLD_CLK_CYCLE[31..0]" (rect 0 0 201 12)(font "Arial" ))
+		(text "FSKDATA_BPSK_HOLD_CLK_CYCLE[31..0]" (rect 114 299 315 311)(font "Arial" ))
+		(line (pt 336 304)(pt 320 304)(line_width 3))
+	)
+	(port
+		(pt 336 320)
+		(output)
+		(text "FSKDATA_BPSK" (rect 0 0 79 12)(font "Arial" ))
+		(text "FSKDATA_BPSK" (rect 236 315 315 327)(font "Arial" ))
+		(line (pt 336 320)(pt 320 320)(line_width 1))
+	)
+	(drawing
+		(rectangle (rect 16 16 320 352)(line_width 1))
+	)
+)

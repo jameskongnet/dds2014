@@ -1,0 +1,7 @@
+module LCDDRIVER(ADDR,DATA,ADOUT,DASEL,INT,EN,RST)
+input ADDR[15:0];
+input	DATA[5:0];
+input INT;
+
+output ADOUT[15:0];
+output DASEL;

@@ -1,0 +1,9 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -vlog01compat -work work +incdir+H:/dropbox/Project/Verilog\ Program/2013system {H:/dropbox/Project/Verilog Program/2013system/DDS_old.v}
+

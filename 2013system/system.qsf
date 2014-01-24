@@ -1,0 +1,190 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2013 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 64-Bit
+# Version 13.0.0 Build 156 04/24/2013 SJ Full Version
+# Date created = 21:59:46  November 16, 2013
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		system_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone III"
+set_global_assignment -name DEVICE EP3C10E144C8
+set_global_assignment -name TOP_LEVEL_ENTITY system
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "21:59:46  NOVEMBER 16, 2013"
+set_global_assignment -name LAST_QUARTUS_VERSION 13.0
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
+set_global_assignment -name EDA_BOARD_DESIGN_TIMING_TOOL "<None>"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT NONE -section_id eda_board_design_timing
+set_global_assignment -name EDA_BOARD_DESIGN_SIGNAL_INTEGRITY_TOOL "<None>"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT NONE -section_id eda_board_design_signal_integrity
+set_global_assignment -name EDA_BOARD_DESIGN_BOUNDARY_SCAN_TOOL "<None>"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT NONE -section_id eda_board_design_boundary_scan
+set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST ON -section_id eda_simulation
+set_global_assignment -name EDA_GENERATE_RTL_SIMULATION_COMMAND_SCRIPT ON -section_id eda_simulation
+set_global_assignment -name EDA_GENERATE_GATE_LEVEL_SIMULATION_COMMAND_SCRIPT ON -section_id eda_simulation
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to AOUT[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to AOUT[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to AOUT[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to AOUT[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to AOUT[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DOUT[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DOUT[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DOUT[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DOUT[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DOUT[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DOUT[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DOUT[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to RESET
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to WRITE
+set_global_assignment -name PARTITION_NETLIST_TYPE POST_FIT -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 144
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 8
+set_global_assignment -name EDA_DESIGN_ENTRY_SYNTHESIS_TOOL "Design Compiler"
+set_global_assignment -name EDA_INPUT_VCC_NAME VDD -section_id eda_design_synthesis
+set_global_assignment -name EDA_LMF_FILE altsyn.lmf -section_id eda_design_synthesis
+set_global_assignment -name EDA_INPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_design_synthesis
+set_global_assignment -name OPTIMIZE_HOLD_TIMING "ALL PATHS"
+set_global_assignment -name OPTIMIZE_MULTI_CORNER_TIMING ON
+set_location_assignment PIN_59 -to UDCLK
+set_location_assignment PIN_10 -to c0
+set_location_assignment PIN_11 -to RESET
+set_location_assignment PIN_68 -to WRITE
+set_location_assignment PIN_53 -to AOUT[0]
+set_location_assignment PIN_52 -to AOUT[1]
+set_location_assignment PIN_51 -to AOUT[2]
+set_location_assignment PIN_50 -to AOUT[3]
+set_location_assignment PIN_49 -to AOUT[4]
+set_location_assignment PIN_70 -to DOUT[0]
+set_location_assignment PIN_69 -to DOUT[1]
+set_location_assignment PIN_72 -to DOUT[2]
+set_location_assignment PIN_71 -to DOUT[3]
+set_location_assignment PIN_31 -to DOUT[4]
+set_location_assignment PIN_30 -to DOUT[5]
+set_location_assignment PIN_33 -to DOUT[6]
+set_location_assignment PIN_32 -to DOUT[7]
+set_location_assignment PIN_22 -to inclk0
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DOUT[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to UDCLK
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to c0
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to inclk0
+set_instance_assignment -name IO_STANDARD "1.2 V" -to CONFIGERR
+set_location_assignment PIN_34 -to AOUT[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to AOUT[5]
+set_location_assignment PIN_43 -to SHK
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SHK
+set_global_assignment -name ENABLE_SIGNALTAP ON
+set_global_assignment -name USE_SIGNALTAP_FILE output_files/stp2.stp
+set_global_assignment -name SLD_NODE_CREATOR_ID 110 -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_ENTITY_NAME sld_signaltap -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[0] -to "DDS_CONFIG:b2v_inst|AOUT[0]" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[1] -to "DDS_CONFIG:b2v_inst|AOUT[1]" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[2] -to "DDS_CONFIG:b2v_inst|AOUT[2]" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[3] -to "DDS_CONFIG:b2v_inst|AOUT[3]" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[4] -to "DDS_CONFIG:b2v_inst|AOUT[4]" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[5] -to "DDS_CONFIG:b2v_inst|AOUT[5]" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[6] -to "DDS_CONFIG:b2v_inst|DOUT[0]" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[7] -to "DDS_CONFIG:b2v_inst|DOUT[1]" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[8] -to "DDS_CONFIG:b2v_inst|DOUT[2]" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[9] -to "DDS_CONFIG:b2v_inst|DOUT[3]" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[10] -to "DDS_CONFIG:b2v_inst|DOUT[4]" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[11] -to "DDS_CONFIG:b2v_inst|DOUT[5]" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[12] -to "DDS_CONFIG:b2v_inst|DOUT[6]" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[0] -to "DDS_CONFIG:b2v_inst|AOUT[0]" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[1] -to "DDS_CONFIG:b2v_inst|AOUT[1]" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[2] -to "DDS_CONFIG:b2v_inst|AOUT[2]" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[3] -to "DDS_CONFIG:b2v_inst|AOUT[3]" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[4] -to "DDS_CONFIG:b2v_inst|AOUT[4]" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[5] -to "DDS_CONFIG:b2v_inst|AOUT[5]" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[6] -to "DDS_CONFIG:b2v_inst|DOUT[0]" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[7] -to "DDS_CONFIG:b2v_inst|DOUT[1]" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[8] -to "DDS_CONFIG:b2v_inst|DOUT[2]" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[9] -to "DDS_CONFIG:b2v_inst|DOUT[3]" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[10] -to "DDS_CONFIG:b2v_inst|DOUT[4]" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[11] -to "DDS_CONFIG:b2v_inst|DOUT[5]" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[12] -to "DDS_CONFIG:b2v_inst|DOUT[6]" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_INFO=805334528" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_POWER_UP_TRIGGER=0" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ATTRIBUTE_MEM_MODE=OFF" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STATE_FLOW_USE_GENERATED=0" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STATE_BITS=11" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_BUFFER_FULL_STOP=1" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_CURRENT_RESOURCE_WIDTH=1" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL=1" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_IN_ENABLED=0" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL_PIPELINE=1" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SAMPLE_DEPTH=16384" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ENABLE_ADVANCED_TRIGGER=1" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[13] -to "DDS_CONFIG:b2v_inst|RESET" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[14] -to "DDS_CONFIG:b2v_inst|WRITE" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[15] -to "DDS_UPDATE_CYCLE:b2v_inst1|UDCLK" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[13] -to "DDS_CONFIG:b2v_inst|RESET" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[14] -to "DDS_CONFIG:b2v_inst|WRITE" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[15] -to "DDS_UPDATE_CYCLE:b2v_inst1|UDCLK" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[16] -to "pll:b2v_inst3|altpll:altpll_component|pll_altpll1:auto_generated|wire_pll1_clk[1]" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[16] -to "pll:b2v_inst3|altpll:altpll_component|pll_altpll1:auto_generated|wire_pll1_clk[1]" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_DATA_BITS=17" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_BITS=17" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ADVANCED_TRIGGER_ENTITY=sld_reserved_2013system_auto_signaltap_0_1_5303," -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SEGMENT_SIZE=16384" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_clk -to "pll:inst3|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[1]" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_CRC_LOWORD=36855" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK=0000000000000000000000000000" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK_LENGTH=28" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_CRC_HIWORD=23938" -section_id auto_signaltap_0
+set_global_assignment -name VERILOG_FILE system.v
+set_global_assignment -name VERILOG_FILE core.v
+set_global_assignment -name VERILOG_FILE DDS_CONFIG.v
+set_global_assignment -name VERILOG_FILE DDS_UPDATE_CYCLE.v
+set_global_assignment -name QIP_FILE pll.qip
+set_global_assignment -name QIP_FILE remoteud.qip
+set_global_assignment -name QIP_FILE fifo.qip
+set_global_assignment -name QIP_FILE fifo0.qip
+set_global_assignment -name VERILOG_FILE lcd.v
+set_global_assignment -name SIGNALTAP_FILE output_files/stp2.stp
+set_global_assignment -name CDF_FILE output_files/system.cdf
+set_global_assignment -name CDF_FILE output_files/Chain3.cdf
+set_global_assignment -name CDF_FILE ../dds/Chain5.cdf
+set_global_assignment -name CDF_FILE output_files/Chain1.cdf
+set_global_assignment -name VERILOG_FILE clockdivision.v
+set_global_assignment -name CDF_FILE output_files/Chain7.cdf
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name SLD_FILE "C:/Users/kangy_000/Documents/GitHub/dds/2013system/output_files/stp2_auto_stripped.stp"

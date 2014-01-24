@@ -1,0 +1,158 @@
+# Reading D:/altera/13.0/modelsim_ae/tcl/vsim/pref.tcl 
+# do system_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying D:\altera\13.0\modelsim_ae\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied D:\altera\13.0\modelsim_ae\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+D:/2013system {D:/2013system/system.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module system
+# 
+# Top level modules:
+# 	system
+# vlog -vlog01compat -work work +incdir+D:/2013system {D:/2013system/core.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module testcore
+# 
+# Top level modules:
+# 	testcore
+# vlog -vlog01compat -work work +incdir+D:/2013system {D:/2013system/DDS_CONFIG.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module DDS_CONFIG
+# 
+# Top level modules:
+# 	DDS_CONFIG
+# vlog -vlog01compat -work work +incdir+D:/2013system {D:/2013system/DDS_UPDATE_CYCLE.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module DDS_UPDATE_CYCLE
+# 
+# Top level modules:
+# 	DDS_UPDATE_CYCLE
+# vlog -vlog01compat -work work +incdir+D:/2013system {D:/2013system/pll.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module pll
+# 
+# Top level modules:
+# 	pll
+# vlog -vlog01compat -work work +incdir+D:/2013system/db {D:/2013system/db/pll_altpll.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module pll_altpll
+# 
+# Top level modules:
+# 	pll_altpll
+# 
+vsim +altera -L altera_ver -L altera_mf_ver -L cycloneiii_ver -do system_run_msim_rtl_verilog.do -l msim_transcript -gui work.system
+# vsim +altera -L altera_ver -L altera_mf_ver -L cycloneiii_ver -do system_run_msim_rtl_verilog.do -l msim_transcript -gui work.system 
+# //  ModelSim ALTERA 10.1d Nov  2 2012 
+# //
+# //  Copyright 1991-2012 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading work.system
+# Loading work.DDS_CONFIG
+# Loading work.DDS_UPDATE_CYCLE
+# Loading work.pll
+# Loading altera_mf_ver.altpll
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.pll_iobuf
+# Loading work.testcore
+# Loading altera_mf_ver.MF_cycloneiii_pll
+# Loading altera_mf_ver.cda_m_cntr
+# Loading altera_mf_ver.cda_n_cntr
+# Loading altera_mf_ver.cda_scale_cntr
+# do system_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+D:/2013system {D:/2013system/system.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module system
+# 
+# Top level modules:
+# 	system
+# vlog -vlog01compat -work work +incdir+D:/2013system {D:/2013system/core.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module testcore
+# 
+# Top level modules:
+# 	testcore
+# vlog -vlog01compat -work work +incdir+D:/2013system {D:/2013system/DDS_CONFIG.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module DDS_CONFIG
+# 
+# Top level modules:
+# 	DDS_CONFIG
+# vlog -vlog01compat -work work +incdir+D:/2013system {D:/2013system/DDS_UPDATE_CYCLE.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module DDS_UPDATE_CYCLE
+# 
+# Top level modules:
+# 	DDS_UPDATE_CYCLE
+# vlog -vlog01compat -work work +incdir+D:/2013system {D:/2013system/pll.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module pll
+# 
+# Top level modules:
+# 	pll
+# vlog -vlog01compat -work work +incdir+D:/2013system/db {D:/2013system/db/pll_altpll.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module pll_altpll
+# 
+# Top level modules:
+# 	pll_altpll
+# 
+do D:/2013system/simulation/modelsim/testwave.do
+# .main_pane.wave.interior.cs.body.pw.wf
+# 0
+add wave -position insertpoint  \
+sim:/system/RESET
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: Jameskong  Hostname: JAMESKONG-PC  ProcessID: 5096
+# 
+#           Attempting to use alternate WLF file "./wlftrwmmv5".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlftrwmmv5
+# 
+add wave -position insertpoint  \
+sim:/system/WRITE
+add wave -position insertpoint  \
+sim:/system/AOUT
+add wave -position insertpoint  \
+sim:/system/DOUT
+add wave -position insertpoint  \
+sim:/system/SHK
+add wave -position insertpoint  \
+sim:/system/UDCLK
+run -all
+# ** Error: (vsim-8630) D:/altera/13.0/modelsim_ae/win32aloem/../altera/verilog/src/altera_mf.v(15675): Infinity results from division operation.
+# 
+# ** Error: (vsim-8630) D:/altera/13.0/modelsim_ae/win32aloem/../altera/verilog/src/altera_mf.v(15675): Infinity results from division operation.
+# 
+# ** Error: (vsim-8630) D:/altera/13.0/modelsim_ae/win32aloem/../altera/verilog/src/altera_mf.v(15675): Infinity results from division operation.
+# 
+#  Note : Cyclone III PLL self reset due to loss of lock
+# Time: 0  Instance: system.b2v_inst3.altpll_component.cycloneiii_pll.pll3
+#  Note : Cyclone III PLL locked to incoming clock
+# Time: 60000  Instance: system.b2v_inst3.altpll_component.cycloneiii_pll.pll3
+# Note : Cyclone III PLL lost lock due to loss of input clock or the input clock is not detected within the allowed time frame.
+# Note : Please run timing simulation to check whether the input clock is operating within the supported VCO range or not.
+# Time: 100040000  Instance: system.b2v_inst3.altpll_component.cycloneiii_pll.pll3
+#  Note : Cyclone III PLL self reset due to loss of lock
+# Time: 100040000  Instance: system.b2v_inst3.altpll_component.cycloneiii_pll.pll3
+wave modify -driver freeze -pattern clock -initialvalue St1 -period 20ns -dutycycle 50 -starttime 0sec -endtime 30sec Edit:/system/inclk0

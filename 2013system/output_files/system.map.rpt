@@ -1,0 +1,1572 @@
+Analysis & Synthesis report for system
+Sat Jan 18 15:21:13 2014
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis IP Cores Summary
+  7. Partition Status Summary
+  8. Dependent File Changes for Partition sld_signaltap:auto_signaltap_0
+  9. Partition for Top-Level Resource Utilization by Entity
+ 10. State Machine - |system|DDS_UPDATE_CYCLE:b2v_inst1|STEP
+ 11. State Machine - |system|DDS_UPDATE_CYCLE:b2v_inst1|UPDATESTEP
+ 12. Registers Removed During Synthesis
+ 13. Removed Registers Triggering Further Register Optimizations
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Parameter Settings for User Entity Instance: DDS_CONFIG:b2v_inst
+ 16. Parameter Settings for User Entity Instance: clockdivision:b2v_inst2
+ 17. Parameter Settings for User Entity Instance: pll:b2v_inst3|altpll:altpll_component
+ 18. Partition Dependent Files
+ 19. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
+ 20. SignalTap II Logic Analyzer Settings
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
+ 23. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat Jan 18 15:21:13 2014       ;
+; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Full Version ;
+; Revision Name                      ; system                                      ;
+; Top-level Entity Name              ; system                                      ;
+; Family                             ; Cyclone III                                 ;
+; Total logic elements               ; N/A until Partition Merge                   ;
+;     Total combinational functions  ; N/A until Partition Merge                   ;
+;     Dedicated logic registers      ; N/A until Partition Merge                   ;
+; Total registers                    ; N/A until Partition Merge                   ;
+; Total pins                         ; N/A until Partition Merge                   ;
+; Total virtual pins                 ; N/A until Partition Merge                   ;
+; Total memory bits                  ; N/A until Partition Merge                   ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
+; Total PLLs                         ; N/A until Partition Merge                   ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP3C10E144C8       ;                    ;
+; Top-level entity name                                                      ; system             ; system             ;
+; Family name                                                                ; Cyclone III        ; Cyclone IV GX      ;
+; Type of Retiming Performed During Resynthesis                              ; Full               ;                    ;
+; Resynthesis Optimization Effort                                            ; Normal             ;                    ;
+; Physical Synthesis Level for Resynthesis                                   ; Normal             ;                    ;
+; Use Generated Physical Constraints File                                    ; On                 ;                    ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 2.00        ;
+; Maximum used               ; 3           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-3         ;  50.0%      ;
+;     Processors 4-8         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                              ;
++------------------------------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                     ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                            ; Library ;
++------------------------------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------------------------+---------+
+; system.v                                             ; yes             ; User Verilog HDL File                  ; C:/Users/kangy_000/Documents/GitHub/dds/2013system/system.v                                             ;         ;
+; core.v                                               ; yes             ; User Verilog HDL File                  ; C:/Users/kangy_000/Documents/GitHub/dds/2013system/core.v                                               ;         ;
+; DDS_CONFIG.v                                         ; yes             ; User Verilog HDL File                  ; C:/Users/kangy_000/Documents/GitHub/dds/2013system/DDS_CONFIG.v                                         ;         ;
+; DDS_UPDATE_CYCLE.v                                   ; yes             ; User Verilog HDL File                  ; C:/Users/kangy_000/Documents/GitHub/dds/2013system/DDS_UPDATE_CYCLE.v                                   ;         ;
+; pll.v                                                ; yes             ; User Wizard-Generated File             ; C:/Users/kangy_000/Documents/GitHub/dds/2013system/pll.v                                                ;         ;
+; clockdivision.v                                      ; yes             ; User Verilog HDL File                  ; C:/Users/kangy_000/Documents/GitHub/dds/2013system/clockdivision.v                                      ;         ;
+; altpll.tdf                                           ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/altpll.tdf                                               ;         ;
+; aglobal130.inc                                       ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/aglobal130.inc                                           ;         ;
+; stratix_pll.inc                                      ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/stratix_pll.inc                                          ;         ;
+; stratixii_pll.inc                                    ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/stratixii_pll.inc                                        ;         ;
+; cycloneii_pll.inc                                    ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/cycloneii_pll.inc                                        ;         ;
+; db/pll_altpll.v                                      ; yes             ; Auto-Generated Megafunction            ; C:/Users/kangy_000/Documents/GitHub/dds/2013system/db/pll_altpll.v                                      ;         ;
+; sld_signaltap.vhd                                    ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/sld_signaltap.vhd                                        ;         ;
+; sld_signaltap_impl.vhd                               ; yes             ; Encrypted Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/sld_signaltap_impl.vhd                                   ;         ;
+; sld_ela_control.vhd                                  ; yes             ; Encrypted Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/sld_ela_control.vhd                                      ;         ;
+; lpm_shiftreg.tdf                                     ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_shiftreg.tdf                                         ;         ;
+; lpm_constant.inc                                     ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_constant.inc                                         ;         ;
+; dffeea.inc                                           ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/dffeea.inc                                               ;         ;
+; sld_ela_trigger.tdf                                  ; yes             ; Encrypted Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/sld_ela_trigger.tdf                                      ;         ;
+; db/sld_ela_trigger_soo.tdf                           ; yes             ; Auto-Generated Megafunction            ; C:/Users/kangy_000/Documents/GitHub/dds/2013system/db/sld_ela_trigger_soo.tdf                           ;         ;
+; db/sld_reserved_2013system_auto_signaltap_0_1_5303.v ; yes             ; Encrypted Auto-Generated Megafunction  ; C:/Users/kangy_000/Documents/GitHub/dds/2013system/db/sld_reserved_2013system_auto_signaltap_0_1_5303.v ;         ;
+; sld_mbpmg.vhd                                        ; yes             ; Encrypted Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/sld_mbpmg.vhd                                            ;         ;
+; sld_ela_trigger_flow_mgr.vhd                         ; yes             ; Encrypted Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/sld_ela_trigger_flow_mgr.vhd                             ;         ;
+; sld_buffer_manager.vhd                               ; yes             ; Encrypted Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/sld_buffer_manager.vhd                                   ;         ;
+; altsyncram.tdf                                       ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/altsyncram.tdf                                           ;         ;
+; stratix_ram_block.inc                                ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/stratix_ram_block.inc                                    ;         ;
+; lpm_mux.inc                                          ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_mux.inc                                              ;         ;
+; lpm_decode.inc                                       ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_decode.inc                                           ;         ;
+; a_rdenreg.inc                                        ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/a_rdenreg.inc                                            ;         ;
+; altrom.inc                                           ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/altrom.inc                                               ;         ;
+; altram.inc                                           ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/altram.inc                                               ;         ;
+; altdpram.inc                                         ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/altdpram.inc                                             ;         ;
+; db/altsyncram_3024.tdf                               ; yes             ; Auto-Generated Megafunction            ; C:/Users/kangy_000/Documents/GitHub/dds/2013system/db/altsyncram_3024.tdf                               ;         ;
+; db/decode_ara.tdf                                    ; yes             ; Auto-Generated Megafunction            ; C:/Users/kangy_000/Documents/GitHub/dds/2013system/db/decode_ara.tdf                                    ;         ;
+; db/mux_anb.tdf                                       ; yes             ; Auto-Generated Megafunction            ; C:/Users/kangy_000/Documents/GitHub/dds/2013system/db/mux_anb.tdf                                       ;         ;
+; altdpram.tdf                                         ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/altdpram.tdf                                             ;         ;
+; memmodes.inc                                         ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/others/maxplus2/memmodes.inc                                           ;         ;
+; a_hdffe.inc                                          ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/a_hdffe.inc                                              ;         ;
+; alt_le_rden_reg.inc                                  ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/alt_le_rden_reg.inc                                      ;         ;
+; altsyncram.inc                                       ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/altsyncram.inc                                           ;         ;
+; lpm_mux.tdf                                          ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_mux.tdf                                              ;         ;
+; muxlut.inc                                           ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/muxlut.inc                                               ;         ;
+; bypassff.inc                                         ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/bypassff.inc                                             ;         ;
+; altshift.inc                                         ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/altshift.inc                                             ;         ;
+; db/mux_orc.tdf                                       ; yes             ; Auto-Generated Megafunction            ; C:/Users/kangy_000/Documents/GitHub/dds/2013system/db/mux_orc.tdf                                       ;         ;
+; lpm_decode.tdf                                       ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_decode.tdf                                           ;         ;
+; declut.inc                                           ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/declut.inc                                               ;         ;
+; lpm_compare.inc                                      ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_compare.inc                                          ;         ;
+; db/decode_4uf.tdf                                    ; yes             ; Auto-Generated Megafunction            ; C:/Users/kangy_000/Documents/GitHub/dds/2013system/db/decode_4uf.tdf                                    ;         ;
+; lpm_counter.tdf                                      ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_counter.tdf                                          ;         ;
+; lpm_add_sub.inc                                      ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_add_sub.inc                                          ;         ;
+; cmpconst.inc                                         ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/cmpconst.inc                                             ;         ;
+; lpm_counter.inc                                      ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_counter.inc                                          ;         ;
+; alt_counter_stratix.inc                              ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/alt_counter_stratix.inc                                  ;         ;
+; db/cntr_8fi.tdf                                      ; yes             ; Auto-Generated Megafunction            ; C:/Users/kangy_000/Documents/GitHub/dds/2013system/db/cntr_8fi.tdf                                      ;         ;
+; db/cmpr_ifc.tdf                                      ; yes             ; Auto-Generated Megafunction            ; C:/Users/kangy_000/Documents/GitHub/dds/2013system/db/cmpr_ifc.tdf                                      ;         ;
+; db/cntr_2aj.tdf                                      ; yes             ; Auto-Generated Megafunction            ; C:/Users/kangy_000/Documents/GitHub/dds/2013system/db/cntr_2aj.tdf                                      ;         ;
+; db/cntr_bfi.tdf                                      ; yes             ; Auto-Generated Megafunction            ; C:/Users/kangy_000/Documents/GitHub/dds/2013system/db/cntr_bfi.tdf                                      ;         ;
+; db/cntr_p1j.tdf                                      ; yes             ; Auto-Generated Megafunction            ; C:/Users/kangy_000/Documents/GitHub/dds/2013system/db/cntr_p1j.tdf                                      ;         ;
+; db/cmpr_efc.tdf                                      ; yes             ; Auto-Generated Megafunction            ; C:/Users/kangy_000/Documents/GitHub/dds/2013system/db/cmpr_efc.tdf                                      ;         ;
+; sld_rom_sr.vhd                                       ; yes             ; Encrypted Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/sld_rom_sr.vhd                                           ;         ;
+; sld_hub.vhd                                          ; yes             ; Encrypted Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/sld_hub.vhd                                              ;         ;
+; sld_jtag_hub.vhd                                     ; yes             ; Encrypted Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/sld_jtag_hub.vhd                                         ;         ;
++------------------------------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                             ;
++--------+--------------+---------+--------------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                                                                                                                                                                                                                                                                                         ; IP Include File                                                                                         ;
++--------+--------------+---------+--------------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |system|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_trigger:\multi_level_advanced_trigger_gen:advanced_trigger_wrapper|sld_ela_trigger_soo:auto_generated|sld_reserved_2013system_auto_signaltap_0_1_5303:mgl_prim1 ; C:/Users/kangy_000/Documents/GitHub/dds/2013system/db/sld_reserved_2013system_auto_signaltap_0_1_5303.v ;
+; Altera ; ALTPLL       ; 13.0    ; N/A          ; N/A          ; |system|pll:b2v_inst3                                                                                                                                                                                                                                                                                                   ; C:/Users/kangy_000/Documents/GitHub/dds/2013system/pll.v                                                ;
+; Altera ; ALTPLL       ; 13.0    ; N/A          ; N/A          ; |system|pll:inst3                                                                                                                                                                                                                                                                                                       ; C:/Users/kangy_000/Documents/GitHub/dds/2013system/pll.v                                                ;
++--------+--------------+---------+--------------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------+
+; Partition Status Summary                                               ;
++--------------------------------+-------------+-------------------------+
+; Partition Name                 ; Synthesized ; Reason                  ;
++--------------------------------+-------------+-------------------------+
+; Top                            ; yes         ; Dependent files changed ;
+; sld_signaltap:auto_signaltap_0 ; yes         ; Dependent files changed ;
+; sld_hub:auto_hub               ; yes         ; Parameters changed      ;
++--------------------------------+-------------+-------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Dependent File Changes for Partition sld_signaltap:auto_signaltap_0                                                                                                                                                                                                                                                                                                                                                                                                         ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+-------------------+----------+----------------------------------+----------------------------------+
+; Hierarchy                                                                                                                                                                                                                                                                                                       ; File Name                                            ; Relative Location ; Change   ; Old                              ; New                              ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+-------------------+----------+----------------------------------+----------------------------------+
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_trigger:\multi_level_advanced_trigger_gen:advanced_trigger_wrapper|sld_ela_trigger_soo:auto_generated|sld_reserved_2013system_auto_signaltap_0_1_5303:mgl_prim1 ; db/sld_reserved_2013system_auto_signaltap_0_1_5303.v ; Project Directory ; Checksum ; 0b7d5868b14051c006cb72a971a09656 ; 89da934b75bcb1bddbea93d48a258dbe ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+-------------------+----------+----------------------------------+----------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Partition for Top-Level Resource Utilization by Entity                                                                                                                                                                                    ;
++--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node           ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                     ; Library Name ;
++--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------+--------------+
+; |system                              ; 252 (2)           ; 72 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system                                                                 ; work         ;
+;    |DDS_CONFIG:b2v_inst|             ; 185 (185)         ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system|DDS_CONFIG:b2v_inst                                             ; work         ;
+;    |DDS_UPDATE_CYCLE:b2v_inst1|      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system|DDS_UPDATE_CYCLE:b2v_inst1                                      ; work         ;
+;    |clockdivision:b2v_inst2|         ; 14 (14)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system|clockdivision:b2v_inst2                                         ; work         ;
+;    |pll:b2v_inst3|                   ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system|pll:b2v_inst3                                                   ; work         ;
+;       |altpll:altpll_component|      ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system|pll:b2v_inst3|altpll:altpll_component                           ; work         ;
+;          |pll_altpll:auto_generated| ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system|pll:b2v_inst3|altpll:altpll_component|pll_altpll:auto_generated ; work         ;
+;    |testcore:b2v_inst4|              ; 51 (51)           ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system|testcore:b2v_inst4                                              ; work         ;
++--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |system|DDS_UPDATE_CYCLE:b2v_inst1|STEP                                                                                                       ;
++---------------------------------------+---------------------------------------+---------------------------------------+---------------------------------------+
+; Name                                  ; STEP.00000000000000000000000000000000 ; STEP.00000000000000000000000000000010 ; STEP.00000000000000000000000000000001 ;
++---------------------------------------+---------------------------------------+---------------------------------------+---------------------------------------+
+; STEP.00000000000000000000000000000000 ; 0                                     ; 0                                     ; 0                                     ;
+; STEP.00000000000000000000000000000001 ; 1                                     ; 0                                     ; 1                                     ;
+; STEP.00000000000000000000000000000010 ; 1                                     ; 1                                     ; 0                                     ;
++---------------------------------------+---------------------------------------+---------------------------------------+---------------------------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------+
+; State Machine - |system|DDS_UPDATE_CYCLE:b2v_inst1|UPDATESTEP                             ;
++---------------------------------------------+---------------------------------------------+
+; Name                                        ; UPDATESTEP.00000000000000000000000000000010 ;
++---------------------------------------------+---------------------------------------------+
+; UPDATESTEP.00000000000000000000000000000000 ; 0                                           ;
+; UPDATESTEP.00000000000000000000000000000010 ; 1                                           ;
++---------------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                               ;
++------------------------------------------------------------------------+---------------------------------------------------------+
+; Register name                                                          ; Reason for Removal                                      ;
++------------------------------------------------------------------------+---------------------------------------------------------+
+; testcore:b2v_inst4|UD_DELAY_CLK_CYCLE[0..29]                           ; Stuck at GND due to stuck port data_in                  ;
+; testcore:b2v_inst4|CLKMUILT[0,2,4]                                     ; Stuck at GND due to stuck port data_in                  ;
+; testcore:b2v_inst4|UD_DELAY_CLK_CYCLE[30,31]                           ; Stuck at GND due to stuck port data_in                  ;
+; testcore:b2v_inst4|TRAIANGLE                                           ; Stuck at GND due to stuck port data_in                  ;
+; testcore:b2v_inst4|DFW[0..47]                                          ; Stuck at GND due to stuck port data_in                  ;
+; testcore:b2v_inst4|PTW2[0..13]                                         ; Stuck at GND due to stuck port data_in                  ;
+; testcore:b2v_inst4|PTW1[0..13]                                         ; Stuck at GND due to stuck port data_in                  ;
+; testcore:b2v_inst4|CYCLE[0..31]                                        ; Stuck at GND due to stuck port data_in                  ;
+; testcore:b2v_inst4|RAMPRATE[0..19]                                     ; Stuck at GND due to stuck port data_in                  ;
+; testcore:b2v_inst4|PLLEN                                               ; Stuck at GND due to stuck port data_in                  ;
+; testcore:b2v_inst4|MODE[0..2]                                          ; Stuck at GND due to stuck port data_in                  ;
+; testcore:b2v_inst4|F2L[0..31]                                          ; Stuck at GND due to stuck port data_in                  ;
+; testcore:b2v_inst4|F2H[0..15]                                          ; Stuck at GND due to stuck port data_in                  ;
+; testcore:b2v_inst4|F1L[2..5,9,11,16..18,20,22..25,29,31]               ; Stuck at GND due to stuck port data_in                  ;
+; testcore:b2v_inst4|F1H[4..6,8,10..15]                                  ; Stuck at GND due to stuck port data_in                  ;
+; testcore:b2v_inst4|SHK                                                 ; Stuck at VCC due to stuck port data_in                  ;
+; DDS_UPDATE_CYCLE:b2v_inst1|DELAYCOUNTER[0..31]                         ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|DELAYREG[0..31]                             ; Lost fanout                                             ;
+; DDS_CONFIG:b2v_inst|FTW2L[0..2]                                        ; Stuck at GND due to stuck port data_in                  ;
+; DDS_CONFIG:b2v_inst|DFWREG[0..47]                                      ; Stuck at GND due to stuck port data_in                  ;
+; DDS_CONFIG:b2v_inst|TRAIANGLEREG                                       ; Stuck at GND due to stuck port data_in                  ;
+; DDS_CONFIG:b2v_inst|FTW2L[3..31]                                       ; Stuck at GND due to stuck port data_in                  ;
+; DDS_CONFIG:b2v_inst|FTW2H[0..15]                                       ; Stuck at GND due to stuck port data_in                  ;
+; DDS_CONFIG:b2v_inst|FTW1L[2..5,9,11,16..18,20,22..25,29,31]            ; Stuck at GND due to stuck port data_in                  ;
+; DDS_CONFIG:b2v_inst|FTW1H[4..6,8,10..15]                               ; Stuck at GND due to stuck port data_in                  ;
+; DDS_CONFIG:b2v_inst|PTW2REG[0..13]                                     ; Stuck at GND due to stuck port data_in                  ;
+; DDS_CONFIG:b2v_inst|PTW1REG[0..13]                                     ; Stuck at GND due to stuck port data_in                  ;
+; DDS_CONFIG:b2v_inst|MODEREG[0..2]                                      ; Stuck at GND due to stuck port data_in                  ;
+; DDS_CONFIG:b2v_inst|CLKMUILTREG[0,2,4]                                 ; Stuck at GND due to stuck port data_in                  ;
+; DDS_CONFIG:b2v_inst|PLLENREG                                           ; Stuck at GND due to stuck port data_in                  ;
+; testcore:b2v_inst4|F1H[9]                                              ; Merged with testcore:b2v_inst4|F1H[7]                   ;
+; testcore:b2v_inst4|F1H[7]                                              ; Merged with testcore:b2v_inst4|F1H[3]                   ;
+; testcore:b2v_inst4|F1H[3]                                              ; Merged with testcore:b2v_inst4|F1H[2]                   ;
+; testcore:b2v_inst4|F1H[2]                                              ; Merged with testcore:b2v_inst4|F1H[1]                   ;
+; testcore:b2v_inst4|F1H[1]                                              ; Merged with testcore:b2v_inst4|F1H[0]                   ;
+; testcore:b2v_inst4|F1H[0]                                              ; Merged with testcore:b2v_inst4|F1L[30]                  ;
+; testcore:b2v_inst4|F1L[30]                                             ; Merged with testcore:b2v_inst4|F1L[28]                  ;
+; testcore:b2v_inst4|F1L[28]                                             ; Merged with testcore:b2v_inst4|F1L[27]                  ;
+; testcore:b2v_inst4|F1L[27]                                             ; Merged with testcore:b2v_inst4|F1L[26]                  ;
+; testcore:b2v_inst4|F1L[26]                                             ; Merged with testcore:b2v_inst4|F1L[21]                  ;
+; testcore:b2v_inst4|F1L[21]                                             ; Merged with testcore:b2v_inst4|F1L[19]                  ;
+; testcore:b2v_inst4|F1L[19]                                             ; Merged with testcore:b2v_inst4|F1L[15]                  ;
+; testcore:b2v_inst4|F1L[15]                                             ; Merged with testcore:b2v_inst4|F1L[14]                  ;
+; testcore:b2v_inst4|F1L[14]                                             ; Merged with testcore:b2v_inst4|F1L[13]                  ;
+; testcore:b2v_inst4|F1L[13]                                             ; Merged with testcore:b2v_inst4|F1L[12]                  ;
+; testcore:b2v_inst4|F1L[12]                                             ; Merged with testcore:b2v_inst4|F1L[10]                  ;
+; testcore:b2v_inst4|F1L[10]                                             ; Merged with testcore:b2v_inst4|F1L[8]                   ;
+; testcore:b2v_inst4|F1L[8]                                              ; Merged with testcore:b2v_inst4|F1L[7]                   ;
+; testcore:b2v_inst4|F1L[7]                                              ; Merged with testcore:b2v_inst4|F1L[6]                   ;
+; testcore:b2v_inst4|F1L[6]                                              ; Merged with testcore:b2v_inst4|F1L[1]                   ;
+; testcore:b2v_inst4|F1L[1]                                              ; Merged with testcore:b2v_inst4|F1L[0]                   ;
+; testcore:b2v_inst4|F1L[0]                                              ; Merged with testcore:b2v_inst4|PLLRANGE                 ;
+; testcore:b2v_inst4|PLLRANGE                                            ; Merged with testcore:b2v_inst4|CLKMUILT[1]              ;
+; testcore:b2v_inst4|CLKMUILT[1]                                         ; Merged with testcore:b2v_inst4|CLKMUILT[3]              ;
+; DDS_UPDATE_CYCLE:b2v_inst1|CYCLECOUNTER[0..18,20..31]                  ; Merged with DDS_UPDATE_CYCLE:b2v_inst1|CYCLECOUNTER[19] ;
+; DDS_CONFIG:b2v_inst|CLKMUILTREG[3]                                     ; Merged with DDS_CONFIG:b2v_inst|CLKMUILTREG[1]          ;
+; DDS_CONFIG:b2v_inst|FTW1H[0..3,7,9]                                    ; Merged with DDS_CONFIG:b2v_inst|CLKMUILTREG[1]          ;
+; DDS_CONFIG:b2v_inst|FTW1L[0,1,6..8,10,12..15,19,21,26..28,30]          ; Merged with DDS_CONFIG:b2v_inst|CLKMUILTREG[1]          ;
+; DDS_CONFIG:b2v_inst|PLLRANGEREG                                        ; Merged with DDS_CONFIG:b2v_inst|CLKMUILTREG[1]          ;
+; DDS_UPDATE_CYCLE:b2v_inst1|CYCLECOUNTER[19]                            ; Stuck at GND due to stuck port data_in                  ;
+; DDS_UPDATE_CYCLE:b2v_inst1|CYCLEREG[0..31]                             ; Stuck at GND due to stuck port clock_enable             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|UPDATEEN                                    ; Stuck at GND due to stuck port data_in                  ;
+; DDS_CONFIG:b2v_inst|DOUT[7]                                            ; Merged with DDS_CONFIG:b2v_inst|DOUT[0]                 ;
+; DDS_UPDATE_CYCLE:b2v_inst1|STEP~7                                      ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|STEP~8                                      ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|STEP~9                                      ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|STEP~10                                     ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|STEP~11                                     ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|STEP~12                                     ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|STEP~13                                     ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|STEP~14                                     ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|STEP~15                                     ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|STEP~16                                     ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|STEP~17                                     ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|STEP~18                                     ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|STEP~19                                     ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|STEP~20                                     ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|STEP~21                                     ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|STEP~22                                     ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|STEP~23                                     ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|STEP~24                                     ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|STEP~25                                     ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|STEP~26                                     ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|STEP~27                                     ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|STEP~28                                     ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|STEP~29                                     ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|STEP~30                                     ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|STEP~31                                     ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|STEP~32                                     ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|STEP~33                                     ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|STEP~34                                     ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|STEP~35                                     ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|STEP~36                                     ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|UPDATESTEP~4                                ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|UPDATESTEP~6                                ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|UPDATESTEP~7                                ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|UPDATESTEP~8                                ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|UPDATESTEP~9                                ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|UPDATESTEP~10                               ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|UPDATESTEP~11                               ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|UPDATESTEP~12                               ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|UPDATESTEP~13                               ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|UPDATESTEP~14                               ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|UPDATESTEP~15                               ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|UPDATESTEP~16                               ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|UPDATESTEP~17                               ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|UPDATESTEP~18                               ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|UPDATESTEP~19                               ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|UPDATESTEP~20                               ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|UPDATESTEP~21                               ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|UPDATESTEP~22                               ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|UPDATESTEP~23                               ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|UPDATESTEP~24                               ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|UPDATESTEP~25                               ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|UPDATESTEP~26                               ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|UPDATESTEP~27                               ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|UPDATESTEP~28                               ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|UPDATESTEP~29                               ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|UPDATESTEP~30                               ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|UPDATESTEP~31                               ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|UPDATESTEP~32                               ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|UPDATESTEP~33                               ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|UPDATESTEP~34                               ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|UPDATESTEP~35                               ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|STEP.00000000000000000000000000000001       ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|STEP.00000000000000000000000000000010       ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|STEP.00000000000000000000000000000000       ; Lost fanout                                             ;
+; DDS_UPDATE_CYCLE:b2v_inst1|UPDATESTEP.00000000000000000000000000000010 ; Lost fanout                                             ;
+; Total Number of Removed Registers = 644                                ;                                                         ;
++------------------------------------------------------------------------+---------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                   ;
++--------------------------------+---------------------------+----------------------------------------------------------------------------------+
+; Register name                  ; Reason for Removal        ; Registers Removed due to This Register                                           ;
++--------------------------------+---------------------------+----------------------------------------------------------------------------------+
+; testcore:b2v_inst4|MODE[0]     ; Stuck at GND              ; DDS_UPDATE_CYCLE:b2v_inst1|DELAYCOUNTER[29],                                     ;
+;                                ; due to stuck port data_in ; DDS_UPDATE_CYCLE:b2v_inst1|DELAYCOUNTER[30],                                     ;
+;                                ;                           ; DDS_UPDATE_CYCLE:b2v_inst1|DELAYCOUNTER[31], DDS_CONFIG:b2v_inst|MODEREG[0],     ;
+;                                ;                           ; DDS_UPDATE_CYCLE:b2v_inst1|CYCLECOUNTER[19], DDS_UPDATE_CYCLE:b2v_inst1|UPDATEEN ;
+; testcore:b2v_inst4|CLKMUILT[2] ; Stuck at GND              ; DDS_CONFIG:b2v_inst|CLKMUILTREG[2]                                               ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|CLKMUILT[0] ; Stuck at GND              ; DDS_CONFIG:b2v_inst|CLKMUILTREG[0]                                               ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|TRAIANGLE   ; Stuck at GND              ; DDS_CONFIG:b2v_inst|TRAIANGLEREG                                                 ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[0]      ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[0]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[1]      ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[1]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[2]      ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[2]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[3]      ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[3]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[4]      ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[4]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[5]      ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[5]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[6]      ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[6]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[7]      ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[7]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[8]      ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[8]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[9]      ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[9]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[10]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[10]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[11]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[11]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[12]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[12]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[13]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[13]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[14]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[14]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[15]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[15]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[16]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[16]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[17]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[17]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[18]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[18]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[19]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[19]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[20]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[20]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[21]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[21]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[22]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[22]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[23]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[23]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[24]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[24]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[25]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[25]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[26]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[26]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[27]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[27]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[28]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[28]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[29]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[29]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[30]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[30]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[31]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[31]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[32]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[32]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[33]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[33]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[34]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[34]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[35]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[35]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[36]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[36]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[37]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[37]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[38]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[38]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[39]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[39]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[40]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[40]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[41]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[41]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[42]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[42]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[43]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[43]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[44]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[44]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[45]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[45]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[46]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[46]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|DFW[47]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|DFWREG[47]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|PTW2[0]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|PTW2REG[0]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|PTW2[1]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|PTW2REG[1]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|PTW2[2]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|PTW2REG[2]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|PTW2[3]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|PTW2REG[3]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|PTW2[4]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|PTW2REG[4]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|PTW2[5]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|PTW2REG[5]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|PTW2[6]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|PTW2REG[6]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|PTW2[7]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|PTW2REG[7]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|PTW2[8]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|PTW2REG[8]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|PTW2[9]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|PTW2REG[9]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|PTW2[10]    ; Stuck at GND              ; DDS_CONFIG:b2v_inst|PTW2REG[10]                                                  ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|PTW2[11]    ; Stuck at GND              ; DDS_CONFIG:b2v_inst|PTW2REG[11]                                                  ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|PTW2[12]    ; Stuck at GND              ; DDS_CONFIG:b2v_inst|PTW2REG[12]                                                  ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|PTW2[13]    ; Stuck at GND              ; DDS_CONFIG:b2v_inst|PTW2REG[13]                                                  ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|PTW1[0]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|PTW1REG[0]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|PTW1[1]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|PTW1REG[1]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|PTW1[2]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|PTW1REG[2]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|PTW1[3]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|PTW1REG[3]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|PTW1[4]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|PTW1REG[4]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|PTW1[5]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|PTW1REG[5]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|PTW1[6]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|PTW1REG[6]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|PTW1[7]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|PTW1REG[7]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|PTW1[8]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|PTW1REG[8]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|PTW1[9]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|PTW1REG[9]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|PTW1[10]    ; Stuck at GND              ; DDS_CONFIG:b2v_inst|PTW1REG[10]                                                  ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|PTW1[11]    ; Stuck at GND              ; DDS_CONFIG:b2v_inst|PTW1REG[11]                                                  ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|PTW1[12]    ; Stuck at GND              ; DDS_CONFIG:b2v_inst|PTW1REG[12]                                                  ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|PTW1[13]    ; Stuck at GND              ; DDS_CONFIG:b2v_inst|PTW1REG[13]                                                  ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|CYCLE[0]    ; Stuck at GND              ; DDS_UPDATE_CYCLE:b2v_inst1|CYCLEREG[0]                                           ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|CYCLE[1]    ; Stuck at GND              ; DDS_UPDATE_CYCLE:b2v_inst1|CYCLEREG[1]                                           ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|CYCLE[2]    ; Stuck at GND              ; DDS_UPDATE_CYCLE:b2v_inst1|CYCLEREG[2]                                           ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|CYCLE[3]    ; Stuck at GND              ; DDS_UPDATE_CYCLE:b2v_inst1|CYCLEREG[3]                                           ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|CYCLE[4]    ; Stuck at GND              ; DDS_UPDATE_CYCLE:b2v_inst1|CYCLEREG[4]                                           ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|CYCLE[5]    ; Stuck at GND              ; DDS_UPDATE_CYCLE:b2v_inst1|CYCLEREG[5]                                           ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|CYCLE[6]    ; Stuck at GND              ; DDS_UPDATE_CYCLE:b2v_inst1|CYCLEREG[6]                                           ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|CYCLE[7]    ; Stuck at GND              ; DDS_UPDATE_CYCLE:b2v_inst1|CYCLEREG[7]                                           ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|CYCLE[8]    ; Stuck at GND              ; DDS_UPDATE_CYCLE:b2v_inst1|CYCLEREG[8]                                           ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|CYCLE[9]    ; Stuck at GND              ; DDS_UPDATE_CYCLE:b2v_inst1|CYCLEREG[9]                                           ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|CYCLE[10]   ; Stuck at GND              ; DDS_UPDATE_CYCLE:b2v_inst1|CYCLEREG[10]                                          ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|CYCLE[11]   ; Stuck at GND              ; DDS_UPDATE_CYCLE:b2v_inst1|CYCLEREG[11]                                          ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|CYCLE[12]   ; Stuck at GND              ; DDS_UPDATE_CYCLE:b2v_inst1|CYCLEREG[12]                                          ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|CYCLE[13]   ; Stuck at GND              ; DDS_UPDATE_CYCLE:b2v_inst1|CYCLEREG[13]                                          ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|CYCLE[14]   ; Stuck at GND              ; DDS_UPDATE_CYCLE:b2v_inst1|CYCLEREG[14]                                          ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|CYCLE[15]   ; Stuck at GND              ; DDS_UPDATE_CYCLE:b2v_inst1|CYCLEREG[15]                                          ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|CYCLE[16]   ; Stuck at GND              ; DDS_UPDATE_CYCLE:b2v_inst1|CYCLEREG[16]                                          ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|CYCLE[17]   ; Stuck at GND              ; DDS_UPDATE_CYCLE:b2v_inst1|CYCLEREG[17]                                          ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|CYCLE[18]   ; Stuck at GND              ; DDS_UPDATE_CYCLE:b2v_inst1|CYCLEREG[18]                                          ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|CYCLE[19]   ; Stuck at GND              ; DDS_UPDATE_CYCLE:b2v_inst1|CYCLEREG[19]                                          ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|CYCLE[20]   ; Stuck at GND              ; DDS_UPDATE_CYCLE:b2v_inst1|CYCLEREG[20]                                          ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|CYCLE[21]   ; Stuck at GND              ; DDS_UPDATE_CYCLE:b2v_inst1|CYCLEREG[21]                                          ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|CYCLE[22]   ; Stuck at GND              ; DDS_UPDATE_CYCLE:b2v_inst1|CYCLEREG[22]                                          ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|CYCLE[23]   ; Stuck at GND              ; DDS_UPDATE_CYCLE:b2v_inst1|CYCLEREG[23]                                          ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|CYCLE[24]   ; Stuck at GND              ; DDS_UPDATE_CYCLE:b2v_inst1|CYCLEREG[24]                                          ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|CYCLE[25]   ; Stuck at GND              ; DDS_UPDATE_CYCLE:b2v_inst1|CYCLEREG[25]                                          ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|CYCLE[26]   ; Stuck at GND              ; DDS_UPDATE_CYCLE:b2v_inst1|CYCLEREG[26]                                          ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|CYCLE[27]   ; Stuck at GND              ; DDS_UPDATE_CYCLE:b2v_inst1|CYCLEREG[27]                                          ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|CYCLE[28]   ; Stuck at GND              ; DDS_UPDATE_CYCLE:b2v_inst1|CYCLEREG[28]                                          ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|CYCLE[29]   ; Stuck at GND              ; DDS_UPDATE_CYCLE:b2v_inst1|CYCLEREG[29]                                          ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|CYCLE[30]   ; Stuck at GND              ; DDS_UPDATE_CYCLE:b2v_inst1|CYCLEREG[30]                                          ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|CYCLE[31]   ; Stuck at GND              ; DDS_UPDATE_CYCLE:b2v_inst1|CYCLEREG[31]                                          ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|PLLEN       ; Stuck at GND              ; DDS_CONFIG:b2v_inst|PLLENREG                                                     ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|CLKMUILT[4] ; Stuck at GND              ; DDS_CONFIG:b2v_inst|CLKMUILTREG[4]                                               ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|MODE[1]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|MODEREG[1]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|MODE[2]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|MODEREG[2]                                                   ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2L[0]      ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2L[0]                                                     ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2L[1]      ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2L[1]                                                     ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2L[2]      ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2L[2]                                                     ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2L[3]      ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2L[3]                                                     ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2L[4]      ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2L[4]                                                     ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2L[5]      ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2L[5]                                                     ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2L[6]      ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2L[6]                                                     ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2L[7]      ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2L[7]                                                     ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2L[8]      ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2L[8]                                                     ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2L[9]      ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2L[9]                                                     ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2L[10]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2L[10]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2L[11]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2L[11]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2L[12]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2L[12]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2L[13]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2L[13]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2L[14]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2L[14]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2L[15]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2L[15]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2L[16]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2L[16]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2L[17]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2L[17]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2L[18]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2L[18]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2L[19]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2L[19]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2L[20]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2L[20]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2L[21]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2L[21]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2L[22]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2L[22]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2L[23]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2L[23]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2L[24]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2L[24]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2L[25]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2L[25]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2L[26]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2L[26]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2L[27]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2L[27]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2L[28]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2L[28]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2L[29]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2L[29]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2L[30]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2L[30]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2L[31]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2L[31]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2H[0]      ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2H[0]                                                     ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2H[1]      ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2H[1]                                                     ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2H[2]      ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2H[2]                                                     ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2H[3]      ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2H[3]                                                     ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2H[4]      ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2H[4]                                                     ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2H[5]      ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2H[5]                                                     ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2H[6]      ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2H[6]                                                     ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2H[7]      ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2H[7]                                                     ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2H[8]      ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2H[8]                                                     ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2H[9]      ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2H[9]                                                     ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2H[10]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2H[10]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2H[11]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2H[11]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2H[12]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2H[12]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2H[13]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2H[13]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2H[14]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2H[14]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F2H[15]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW2H[15]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F1L[2]      ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW1L[2]                                                     ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F1L[3]      ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW1L[3]                                                     ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F1L[4]      ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW1L[4]                                                     ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F1L[5]      ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW1L[5]                                                     ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F1L[9]      ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW1L[9]                                                     ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F1L[11]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW1L[11]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F1L[16]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW1L[16]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F1L[17]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW1L[17]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F1L[18]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW1L[18]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F1L[20]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW1L[20]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F1L[22]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW1L[22]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F1L[23]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW1L[23]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F1L[24]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW1L[24]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F1L[25]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW1L[25]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F1L[29]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW1L[29]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F1L[31]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW1L[31]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F1H[4]      ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW1H[4]                                                     ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F1H[5]      ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW1H[5]                                                     ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F1H[6]      ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW1H[6]                                                     ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F1H[8]      ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW1H[8]                                                     ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F1H[10]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW1H[10]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F1H[11]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW1H[11]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F1H[12]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW1H[12]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F1H[13]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW1H[13]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F1H[14]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW1H[14]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
+; testcore:b2v_inst4|F1H[15]     ; Stuck at GND              ; DDS_CONFIG:b2v_inst|FTW1H[15]                                                    ;
+;                                ; due to stuck port data_in ;                                                                                  ;
++--------------------------------+---------------------------+----------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+; 128:1              ; 6 bits    ; 510 LEs       ; 96 LEs               ; 414 LEs                ; Yes        ; |system|DDS_CONFIG:b2v_inst|AOUT[0] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DDS_CONFIG:b2v_inst ;
++----------------+---------+---------------------------------------+
+; Parameter Name ; Value   ; Type                                  ;
++----------------+---------+---------------------------------------+
+; FINAL          ; 1011000 ; Unsigned Binary                       ;
+; PTW2SET        ; 111101  ; Unsigned Binary                       ;
++----------------+---------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clockdivision:b2v_inst2 ;
++----------------+--------+--------------------------------------------+
+; Parameter Name ; Value  ; Type                                       ;
++----------------+--------+--------------------------------------------+
+; division       ; 000010 ; Unsigned Binary                            ;
++----------------+--------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pll:b2v_inst3|altpll:altpll_component ;
++-------------------------------+-----------------------+----------------------------+
+; Parameter Name                ; Value                 ; Type                       ;
++-------------------------------+-----------------------+----------------------------+
+; OPERATION_MODE                ; NORMAL                ; Untyped                    ;
+; PLL_TYPE                      ; AUTO                  ; Untyped                    ;
+; LPM_HINT                      ; CBX_MODULE_PREFIX=pll ; Untyped                    ;
+; QUALIFY_CONF_DONE             ; OFF                   ; Untyped                    ;
+; COMPENSATE_CLOCK              ; CLK0                  ; Untyped                    ;
+; SCAN_CHAIN                    ; LONG                  ; Untyped                    ;
+; PRIMARY_CLOCK                 ; INCLK0                ; Untyped                    ;
+; INCLK0_INPUT_FREQUENCY        ; 20000                 ; Signed Integer             ;
+; INCLK1_INPUT_FREQUENCY        ; 0                     ; Untyped                    ;
+; GATE_LOCK_SIGNAL              ; NO                    ; Untyped                    ;
+; GATE_LOCK_COUNTER             ; 0                     ; Untyped                    ;
+; LOCK_HIGH                     ; 1                     ; Untyped                    ;
+; LOCK_LOW                      ; 1                     ; Untyped                    ;
+; VALID_LOCK_MULTIPLIER         ; 1                     ; Untyped                    ;
+; INVALID_LOCK_MULTIPLIER       ; 5                     ; Untyped                    ;
+; SWITCH_OVER_ON_LOSSCLK        ; OFF                   ; Untyped                    ;
+; SWITCH_OVER_ON_GATED_LOCK     ; OFF                   ; Untyped                    ;
+; ENABLE_SWITCH_OVER_COUNTER    ; OFF                   ; Untyped                    ;
+; SKIP_VCO                      ; OFF                   ; Untyped                    ;
+; SWITCH_OVER_COUNTER           ; 0                     ; Untyped                    ;
+; SWITCH_OVER_TYPE              ; AUTO                  ; Untyped                    ;
+; FEEDBACK_SOURCE               ; EXTCLK0               ; Untyped                    ;
+; BANDWIDTH                     ; 0                     ; Untyped                    ;
+; BANDWIDTH_TYPE                ; AUTO                  ; Untyped                    ;
+; SPREAD_FREQUENCY              ; 0                     ; Untyped                    ;
+; DOWN_SPREAD                   ; 0                     ; Untyped                    ;
+; SELF_RESET_ON_GATED_LOSS_LOCK ; OFF                   ; Untyped                    ;
+; SELF_RESET_ON_LOSS_LOCK       ; ON                    ; Untyped                    ;
+; CLK9_MULTIPLY_BY              ; 0                     ; Untyped                    ;
+; CLK8_MULTIPLY_BY              ; 0                     ; Untyped                    ;
+; CLK7_MULTIPLY_BY              ; 0                     ; Untyped                    ;
+; CLK6_MULTIPLY_BY              ; 0                     ; Untyped                    ;
+; CLK5_MULTIPLY_BY              ; 1                     ; Untyped                    ;
+; CLK4_MULTIPLY_BY              ; 1                     ; Untyped                    ;
+; CLK3_MULTIPLY_BY              ; 1                     ; Untyped                    ;
+; CLK2_MULTIPLY_BY              ; 1                     ; Untyped                    ;
+; CLK1_MULTIPLY_BY              ; 1                     ; Signed Integer             ;
+; CLK0_MULTIPLY_BY              ; 2                     ; Signed Integer             ;
+; CLK9_DIVIDE_BY                ; 0                     ; Untyped                    ;
+; CLK8_DIVIDE_BY                ; 0                     ; Untyped                    ;
+; CLK7_DIVIDE_BY                ; 0                     ; Untyped                    ;
+; CLK6_DIVIDE_BY                ; 0                     ; Untyped                    ;
+; CLK5_DIVIDE_BY                ; 1                     ; Untyped                    ;
+; CLK4_DIVIDE_BY                ; 1                     ; Untyped                    ;
+; CLK3_DIVIDE_BY                ; 1                     ; Untyped                    ;
+; CLK2_DIVIDE_BY                ; 1                     ; Untyped                    ;
+; CLK1_DIVIDE_BY                ; 5000                  ; Signed Integer             ;
+; CLK0_DIVIDE_BY                ; 1                     ; Signed Integer             ;
+; CLK9_PHASE_SHIFT              ; 0                     ; Untyped                    ;
+; CLK8_PHASE_SHIFT              ; 0                     ; Untyped                    ;
+; CLK7_PHASE_SHIFT              ; 0                     ; Untyped                    ;
+; CLK6_PHASE_SHIFT              ; 0                     ; Untyped                    ;
+; CLK5_PHASE_SHIFT              ; 0                     ; Untyped                    ;
+; CLK4_PHASE_SHIFT              ; 0                     ; Untyped                    ;
+; CLK3_PHASE_SHIFT              ; 0                     ; Untyped                    ;
+; CLK2_PHASE_SHIFT              ; 0                     ; Untyped                    ;
+; CLK1_PHASE_SHIFT              ; 0                     ; Untyped                    ;
+; CLK0_PHASE_SHIFT              ; 0                     ; Untyped                    ;
+; CLK5_TIME_DELAY               ; 0                     ; Untyped                    ;
+; CLK4_TIME_DELAY               ; 0                     ; Untyped                    ;
+; CLK3_TIME_DELAY               ; 0                     ; Untyped                    ;
+; CLK2_TIME_DELAY               ; 0                     ; Untyped                    ;
+; CLK1_TIME_DELAY               ; 0                     ; Untyped                    ;
+; CLK0_TIME_DELAY               ; 0                     ; Untyped                    ;
+; CLK9_DUTY_CYCLE               ; 50                    ; Untyped                    ;
+; CLK8_DUTY_CYCLE               ; 50                    ; Untyped                    ;
+; CLK7_DUTY_CYCLE               ; 50                    ; Untyped                    ;
+; CLK6_DUTY_CYCLE               ; 50                    ; Untyped                    ;
+; CLK5_DUTY_CYCLE               ; 50                    ; Untyped                    ;
+; CLK4_DUTY_CYCLE               ; 50                    ; Untyped                    ;
+; CLK3_DUTY_CYCLE               ; 50                    ; Untyped                    ;
+; CLK2_DUTY_CYCLE               ; 50                    ; Untyped                    ;
+; CLK1_DUTY_CYCLE               ; 50                    ; Signed Integer             ;
+; CLK0_DUTY_CYCLE               ; 50                    ; Signed Integer             ;
+; CLK9_USE_EVEN_COUNTER_MODE    ; OFF                   ; Untyped                    ;
+; CLK8_USE_EVEN_COUNTER_MODE    ; OFF                   ; Untyped                    ;
+; CLK7_USE_EVEN_COUNTER_MODE    ; OFF                   ; Untyped                    ;
+; CLK6_USE_EVEN_COUNTER_MODE    ; OFF                   ; Untyped                    ;
+; CLK5_USE_EVEN_COUNTER_MODE    ; OFF                   ; Untyped                    ;
+; CLK4_USE_EVEN_COUNTER_MODE    ; OFF                   ; Untyped                    ;
+; CLK3_USE_EVEN_COUNTER_MODE    ; OFF                   ; Untyped                    ;
+; CLK2_USE_EVEN_COUNTER_MODE    ; OFF                   ; Untyped                    ;
+; CLK1_USE_EVEN_COUNTER_MODE    ; OFF                   ; Untyped                    ;
+; CLK0_USE_EVEN_COUNTER_MODE    ; OFF                   ; Untyped                    ;
+; CLK9_USE_EVEN_COUNTER_VALUE   ; OFF                   ; Untyped                    ;
+; CLK8_USE_EVEN_COUNTER_VALUE   ; OFF                   ; Untyped                    ;
+; CLK7_USE_EVEN_COUNTER_VALUE   ; OFF                   ; Untyped                    ;
+; CLK6_USE_EVEN_COUNTER_VALUE   ; OFF                   ; Untyped                    ;
+; CLK5_USE_EVEN_COUNTER_VALUE   ; OFF                   ; Untyped                    ;
+; CLK4_USE_EVEN_COUNTER_VALUE   ; OFF                   ; Untyped                    ;
+; CLK3_USE_EVEN_COUNTER_VALUE   ; OFF                   ; Untyped                    ;
+; CLK2_USE_EVEN_COUNTER_VALUE   ; OFF                   ; Untyped                    ;
+; CLK1_USE_EVEN_COUNTER_VALUE   ; OFF                   ; Untyped                    ;
+; CLK0_USE_EVEN_COUNTER_VALUE   ; OFF                   ; Untyped                    ;
+; LOCK_WINDOW_UI                ;  0.05                 ; Untyped                    ;
+; LOCK_WINDOW_UI_BITS           ; UNUSED                ; Untyped                    ;
+; VCO_RANGE_DETECTOR_LOW_BITS   ; UNUSED                ; Untyped                    ;
+; VCO_RANGE_DETECTOR_HIGH_BITS  ; UNUSED                ; Untyped                    ;
+; DPA_MULTIPLY_BY               ; 0                     ; Untyped                    ;
+; DPA_DIVIDE_BY                 ; 1                     ; Untyped                    ;
+; DPA_DIVIDER                   ; 0                     ; Untyped                    ;
+; EXTCLK3_MULTIPLY_BY           ; 1                     ; Untyped                    ;
+; EXTCLK2_MULTIPLY_BY           ; 1                     ; Untyped                    ;
+; EXTCLK1_MULTIPLY_BY           ; 1                     ; Untyped                    ;
+; EXTCLK0_MULTIPLY_BY           ; 1                     ; Untyped                    ;
+; EXTCLK3_DIVIDE_BY             ; 1                     ; Untyped                    ;
+; EXTCLK2_DIVIDE_BY             ; 1                     ; Untyped                    ;
+; EXTCLK1_DIVIDE_BY             ; 1                     ; Untyped                    ;
+; EXTCLK0_DIVIDE_BY             ; 1                     ; Untyped                    ;
+; EXTCLK3_PHASE_SHIFT           ; 0                     ; Untyped                    ;
+; EXTCLK2_PHASE_SHIFT           ; 0                     ; Untyped                    ;
+; EXTCLK1_PHASE_SHIFT           ; 0                     ; Untyped                    ;
+; EXTCLK0_PHASE_SHIFT           ; 0                     ; Untyped                    ;
+; EXTCLK3_TIME_DELAY            ; 0                     ; Untyped                    ;
+; EXTCLK2_TIME_DELAY            ; 0                     ; Untyped                    ;
+; EXTCLK1_TIME_DELAY            ; 0                     ; Untyped                    ;
+; EXTCLK0_TIME_DELAY            ; 0                     ; Untyped                    ;
+; EXTCLK3_DUTY_CYCLE            ; 50                    ; Untyped                    ;
+; EXTCLK2_DUTY_CYCLE            ; 50                    ; Untyped                    ;
+; EXTCLK1_DUTY_CYCLE            ; 50                    ; Untyped                    ;
+; EXTCLK0_DUTY_CYCLE            ; 50                    ; Untyped                    ;
+; VCO_MULTIPLY_BY               ; 0                     ; Untyped                    ;
+; VCO_DIVIDE_BY                 ; 0                     ; Untyped                    ;
+; SCLKOUT0_PHASE_SHIFT          ; 0                     ; Untyped                    ;
+; SCLKOUT1_PHASE_SHIFT          ; 0                     ; Untyped                    ;
+; VCO_MIN                       ; 0                     ; Untyped                    ;
+; VCO_MAX                       ; 0                     ; Untyped                    ;
+; VCO_CENTER                    ; 0                     ; Untyped                    ;
+; PFD_MIN                       ; 0                     ; Untyped                    ;
+; PFD_MAX                       ; 0                     ; Untyped                    ;
+; M_INITIAL                     ; 0                     ; Untyped                    ;
+; M                             ; 0                     ; Untyped                    ;
+; N                             ; 1                     ; Untyped                    ;
+; M2                            ; 1                     ; Untyped                    ;
+; N2                            ; 1                     ; Untyped                    ;
+; SS                            ; 1                     ; Untyped                    ;
+; C0_HIGH                       ; 0                     ; Untyped                    ;
+; C1_HIGH                       ; 0                     ; Untyped                    ;
+; C2_HIGH                       ; 0                     ; Untyped                    ;
+; C3_HIGH                       ; 0                     ; Untyped                    ;
+; C4_HIGH                       ; 0                     ; Untyped                    ;
+; C5_HIGH                       ; 0                     ; Untyped                    ;
+; C6_HIGH                       ; 0                     ; Untyped                    ;
+; C7_HIGH                       ; 0                     ; Untyped                    ;
+; C8_HIGH                       ; 0                     ; Untyped                    ;
+; C9_HIGH                       ; 0                     ; Untyped                    ;
+; C0_LOW                        ; 0                     ; Untyped                    ;
+; C1_LOW                        ; 0                     ; Untyped                    ;
+; C2_LOW                        ; 0                     ; Untyped                    ;
+; C3_LOW                        ; 0                     ; Untyped                    ;
+; C4_LOW                        ; 0                     ; Untyped                    ;
+; C5_LOW                        ; 0                     ; Untyped                    ;
+; C6_LOW                        ; 0                     ; Untyped                    ;
+; C7_LOW                        ; 0                     ; Untyped                    ;
+; C8_LOW                        ; 0                     ; Untyped                    ;
+; C9_LOW                        ; 0                     ; Untyped                    ;
+; C0_INITIAL                    ; 0                     ; Untyped                    ;
+; C1_INITIAL                    ; 0                     ; Untyped                    ;
+; C2_INITIAL                    ; 0                     ; Untyped                    ;
+; C3_INITIAL                    ; 0                     ; Untyped                    ;
+; C4_INITIAL                    ; 0                     ; Untyped                    ;
+; C5_INITIAL                    ; 0                     ; Untyped                    ;
+; C6_INITIAL                    ; 0                     ; Untyped                    ;
+; C7_INITIAL                    ; 0                     ; Untyped                    ;
+; C8_INITIAL                    ; 0                     ; Untyped                    ;
+; C9_INITIAL                    ; 0                     ; Untyped                    ;
+; C0_MODE                       ; BYPASS                ; Untyped                    ;
+; C1_MODE                       ; BYPASS                ; Untyped                    ;
+; C2_MODE                       ; BYPASS                ; Untyped                    ;
+; C3_MODE                       ; BYPASS                ; Untyped                    ;
+; C4_MODE                       ; BYPASS                ; Untyped                    ;
+; C5_MODE                       ; BYPASS                ; Untyped                    ;
+; C6_MODE                       ; BYPASS                ; Untyped                    ;
+; C7_MODE                       ; BYPASS                ; Untyped                    ;
+; C8_MODE                       ; BYPASS                ; Untyped                    ;
+; C9_MODE                       ; BYPASS                ; Untyped                    ;
+; C0_PH                         ; 0                     ; Untyped                    ;
+; C1_PH                         ; 0                     ; Untyped                    ;
+; C2_PH                         ; 0                     ; Untyped                    ;
+; C3_PH                         ; 0                     ; Untyped                    ;
+; C4_PH                         ; 0                     ; Untyped                    ;
+; C5_PH                         ; 0                     ; Untyped                    ;
+; C6_PH                         ; 0                     ; Untyped                    ;
+; C7_PH                         ; 0                     ; Untyped                    ;
+; C8_PH                         ; 0                     ; Untyped                    ;
+; C9_PH                         ; 0                     ; Untyped                    ;
+; L0_HIGH                       ; 1                     ; Untyped                    ;
+; L1_HIGH                       ; 1                     ; Untyped                    ;
+; G0_HIGH                       ; 1                     ; Untyped                    ;
+; G1_HIGH                       ; 1                     ; Untyped                    ;
+; G2_HIGH                       ; 1                     ; Untyped                    ;
+; G3_HIGH                       ; 1                     ; Untyped                    ;
+; E0_HIGH                       ; 1                     ; Untyped                    ;
+; E1_HIGH                       ; 1                     ; Untyped                    ;
+; E2_HIGH                       ; 1                     ; Untyped                    ;
+; E3_HIGH                       ; 1                     ; Untyped                    ;
+; L0_LOW                        ; 1                     ; Untyped                    ;
+; L1_LOW                        ; 1                     ; Untyped                    ;
+; G0_LOW                        ; 1                     ; Untyped                    ;
+; G1_LOW                        ; 1                     ; Untyped                    ;
+; G2_LOW                        ; 1                     ; Untyped                    ;
+; G3_LOW                        ; 1                     ; Untyped                    ;
+; E0_LOW                        ; 1                     ; Untyped                    ;
+; E1_LOW                        ; 1                     ; Untyped                    ;
+; E2_LOW                        ; 1                     ; Untyped                    ;
+; E3_LOW                        ; 1                     ; Untyped                    ;
+; L0_INITIAL                    ; 1                     ; Untyped                    ;
+; L1_INITIAL                    ; 1                     ; Untyped                    ;
+; G0_INITIAL                    ; 1                     ; Untyped                    ;
+; G1_INITIAL                    ; 1                     ; Untyped                    ;
+; G2_INITIAL                    ; 1                     ; Untyped                    ;
+; G3_INITIAL                    ; 1                     ; Untyped                    ;
+; E0_INITIAL                    ; 1                     ; Untyped                    ;
+; E1_INITIAL                    ; 1                     ; Untyped                    ;
+; E2_INITIAL                    ; 1                     ; Untyped                    ;
+; E3_INITIAL                    ; 1                     ; Untyped                    ;
+; L0_MODE                       ; BYPASS                ; Untyped                    ;
+; L1_MODE                       ; BYPASS                ; Untyped                    ;
+; G0_MODE                       ; BYPASS                ; Untyped                    ;
+; G1_MODE                       ; BYPASS                ; Untyped                    ;
+; G2_MODE                       ; BYPASS                ; Untyped                    ;
+; G3_MODE                       ; BYPASS                ; Untyped                    ;
+; E0_MODE                       ; BYPASS                ; Untyped                    ;
+; E1_MODE                       ; BYPASS                ; Untyped                    ;
+; E2_MODE                       ; BYPASS                ; Untyped                    ;
+; E3_MODE                       ; BYPASS                ; Untyped                    ;
+; L0_PH                         ; 0                     ; Untyped                    ;
+; L1_PH                         ; 0                     ; Untyped                    ;
+; G0_PH                         ; 0                     ; Untyped                    ;
+; G1_PH                         ; 0                     ; Untyped                    ;
+; G2_PH                         ; 0                     ; Untyped                    ;
+; G3_PH                         ; 0                     ; Untyped                    ;
+; E0_PH                         ; 0                     ; Untyped                    ;
+; E1_PH                         ; 0                     ; Untyped                    ;
+; E2_PH                         ; 0                     ; Untyped                    ;
+; E3_PH                         ; 0                     ; Untyped                    ;
+; M_PH                          ; 0                     ; Untyped                    ;
+; C1_USE_CASC_IN                ; OFF                   ; Untyped                    ;
+; C2_USE_CASC_IN                ; OFF                   ; Untyped                    ;
+; C3_USE_CASC_IN                ; OFF                   ; Untyped                    ;
+; C4_USE_CASC_IN                ; OFF                   ; Untyped                    ;
+; C5_USE_CASC_IN                ; OFF                   ; Untyped                    ;
+; C6_USE_CASC_IN                ; OFF                   ; Untyped                    ;
+; C7_USE_CASC_IN                ; OFF                   ; Untyped                    ;
+; C8_USE_CASC_IN                ; OFF                   ; Untyped                    ;
+; C9_USE_CASC_IN                ; OFF                   ; Untyped                    ;
+; CLK0_COUNTER                  ; G0                    ; Untyped                    ;
+; CLK1_COUNTER                  ; G0                    ; Untyped                    ;
+; CLK2_COUNTER                  ; G0                    ; Untyped                    ;
+; CLK3_COUNTER                  ; G0                    ; Untyped                    ;
+; CLK4_COUNTER                  ; G0                    ; Untyped                    ;
+; CLK5_COUNTER                  ; G0                    ; Untyped                    ;
+; CLK6_COUNTER                  ; E0                    ; Untyped                    ;
+; CLK7_COUNTER                  ; E1                    ; Untyped                    ;
+; CLK8_COUNTER                  ; E2                    ; Untyped                    ;
+; CLK9_COUNTER                  ; E3                    ; Untyped                    ;
+; L0_TIME_DELAY                 ; 0                     ; Untyped                    ;
+; L1_TIME_DELAY                 ; 0                     ; Untyped                    ;
+; G0_TIME_DELAY                 ; 0                     ; Untyped                    ;
+; G1_TIME_DELAY                 ; 0                     ; Untyped                    ;
+; G2_TIME_DELAY                 ; 0                     ; Untyped                    ;
+; G3_TIME_DELAY                 ; 0                     ; Untyped                    ;
+; E0_TIME_DELAY                 ; 0                     ; Untyped                    ;
+; E1_TIME_DELAY                 ; 0                     ; Untyped                    ;
+; E2_TIME_DELAY                 ; 0                     ; Untyped                    ;
+; E3_TIME_DELAY                 ; 0                     ; Untyped                    ;
+; M_TIME_DELAY                  ; 0                     ; Untyped                    ;
+; N_TIME_DELAY                  ; 0                     ; Untyped                    ;
+; EXTCLK3_COUNTER               ; E3                    ; Untyped                    ;
+; EXTCLK2_COUNTER               ; E2                    ; Untyped                    ;
+; EXTCLK1_COUNTER               ; E1                    ; Untyped                    ;
+; EXTCLK0_COUNTER               ; E0                    ; Untyped                    ;
+; ENABLE0_COUNTER               ; L0                    ; Untyped                    ;
+; ENABLE1_COUNTER               ; L0                    ; Untyped                    ;
+; CHARGE_PUMP_CURRENT           ; 2                     ; Untyped                    ;
+; LOOP_FILTER_R                 ;  1.000000             ; Untyped                    ;
+; LOOP_FILTER_C                 ; 5                     ; Untyped                    ;
+; CHARGE_PUMP_CURRENT_BITS      ; 9999                  ; Untyped                    ;
+; LOOP_FILTER_R_BITS            ; 9999                  ; Untyped                    ;
+; LOOP_FILTER_C_BITS            ; 9999                  ; Untyped                    ;
+; VCO_POST_SCALE                ; 0                     ; Untyped                    ;
+; CLK2_OUTPUT_FREQUENCY         ; 0                     ; Untyped                    ;
+; CLK1_OUTPUT_FREQUENCY         ; 0                     ; Untyped                    ;
+; CLK0_OUTPUT_FREQUENCY         ; 0                     ; Untyped                    ;
+; INTENDED_DEVICE_FAMILY        ; Cyclone III           ; Untyped                    ;
+; PORT_CLKENA0                  ; PORT_UNUSED           ; Untyped                    ;
+; PORT_CLKENA1                  ; PORT_UNUSED           ; Untyped                    ;
+; PORT_CLKENA2                  ; PORT_UNUSED           ; Untyped                    ;
+; PORT_CLKENA3                  ; PORT_UNUSED           ; Untyped                    ;
+; PORT_CLKENA4                  ; PORT_UNUSED           ; Untyped                    ;
+; PORT_CLKENA5                  ; PORT_UNUSED           ; Untyped                    ;
+; PORT_EXTCLKENA0               ; PORT_CONNECTIVITY     ; Untyped                    ;
+; PORT_EXTCLKENA1               ; PORT_CONNECTIVITY     ; Untyped                    ;
+; PORT_EXTCLKENA2               ; PORT_CONNECTIVITY     ; Untyped                    ;
+; PORT_EXTCLKENA3               ; PORT_CONNECTIVITY     ; Untyped                    ;
+; PORT_EXTCLK0                  ; PORT_UNUSED           ; Untyped                    ;
+; PORT_EXTCLK1                  ; PORT_UNUSED           ; Untyped                    ;
+; PORT_EXTCLK2                  ; PORT_UNUSED           ; Untyped                    ;
+; PORT_EXTCLK3                  ; PORT_UNUSED           ; Untyped                    ;
+; PORT_CLKBAD0                  ; PORT_UNUSED           ; Untyped                    ;
+; PORT_CLKBAD1                  ; PORT_UNUSED           ; Untyped                    ;
+; PORT_CLK0                     ; PORT_USED             ; Untyped                    ;
+; PORT_CLK1                     ; PORT_USED             ; Untyped                    ;
+; PORT_CLK2                     ; PORT_UNUSED           ; Untyped                    ;
+; PORT_CLK3                     ; PORT_UNUSED           ; Untyped                    ;
+; PORT_CLK4                     ; PORT_UNUSED           ; Untyped                    ;
+; PORT_CLK5                     ; PORT_UNUSED           ; Untyped                    ;
+; PORT_CLK6                     ; PORT_UNUSED           ; Untyped                    ;
+; PORT_CLK7                     ; PORT_UNUSED           ; Untyped                    ;
+; PORT_CLK8                     ; PORT_UNUSED           ; Untyped                    ;
+; PORT_CLK9                     ; PORT_UNUSED           ; Untyped                    ;
+; PORT_SCANDATA                 ; PORT_UNUSED           ; Untyped                    ;
+; PORT_SCANDATAOUT              ; PORT_UNUSED           ; Untyped                    ;
+; PORT_SCANDONE                 ; PORT_UNUSED           ; Untyped                    ;
+; PORT_SCLKOUT1                 ; PORT_CONNECTIVITY     ; Untyped                    ;
+; PORT_SCLKOUT0                 ; PORT_CONNECTIVITY     ; Untyped                    ;
+; PORT_ACTIVECLOCK              ; PORT_UNUSED           ; Untyped                    ;
+; PORT_CLKLOSS                  ; PORT_UNUSED           ; Untyped                    ;
+; PORT_INCLK1                   ; PORT_UNUSED           ; Untyped                    ;
+; PORT_INCLK0                   ; PORT_USED             ; Untyped                    ;
+; PORT_FBIN                     ; PORT_UNUSED           ; Untyped                    ;
+; PORT_PLLENA                   ; PORT_UNUSED           ; Untyped                    ;
+; PORT_CLKSWITCH                ; PORT_UNUSED           ; Untyped                    ;
+; PORT_ARESET                   ; PORT_UNUSED           ; Untyped                    ;
+; PORT_PFDENA                   ; PORT_UNUSED           ; Untyped                    ;
+; PORT_SCANCLK                  ; PORT_UNUSED           ; Untyped                    ;
+; PORT_SCANACLR                 ; PORT_UNUSED           ; Untyped                    ;
+; PORT_SCANREAD                 ; PORT_UNUSED           ; Untyped                    ;
+; PORT_SCANWRITE                ; PORT_UNUSED           ; Untyped                    ;
+; PORT_ENABLE0                  ; PORT_CONNECTIVITY     ; Untyped                    ;
+; PORT_ENABLE1                  ; PORT_CONNECTIVITY     ; Untyped                    ;
+; PORT_LOCKED                   ; PORT_USED             ; Untyped                    ;
+; PORT_CONFIGUPDATE             ; PORT_UNUSED           ; Untyped                    ;
+; PORT_FBOUT                    ; PORT_CONNECTIVITY     ; Untyped                    ;
+; PORT_PHASEDONE                ; PORT_UNUSED           ; Untyped                    ;
+; PORT_PHASESTEP                ; PORT_UNUSED           ; Untyped                    ;
+; PORT_PHASEUPDOWN              ; PORT_UNUSED           ; Untyped                    ;
+; PORT_SCANCLKENA               ; PORT_UNUSED           ; Untyped                    ;
+; PORT_PHASECOUNTERSELECT       ; PORT_UNUSED           ; Untyped                    ;
+; PORT_VCOOVERRANGE             ; PORT_CONNECTIVITY     ; Untyped                    ;
+; PORT_VCOUNDERRANGE            ; PORT_CONNECTIVITY     ; Untyped                    ;
+; M_TEST_SOURCE                 ; 5                     ; Untyped                    ;
+; C0_TEST_SOURCE                ; 5                     ; Untyped                    ;
+; C1_TEST_SOURCE                ; 5                     ; Untyped                    ;
+; C2_TEST_SOURCE                ; 5                     ; Untyped                    ;
+; C3_TEST_SOURCE                ; 5                     ; Untyped                    ;
+; C4_TEST_SOURCE                ; 5                     ; Untyped                    ;
+; C5_TEST_SOURCE                ; 5                     ; Untyped                    ;
+; C6_TEST_SOURCE                ; 5                     ; Untyped                    ;
+; C7_TEST_SOURCE                ; 5                     ; Untyped                    ;
+; C8_TEST_SOURCE                ; 5                     ; Untyped                    ;
+; C9_TEST_SOURCE                ; 5                     ; Untyped                    ;
+; CBXI_PARAMETER                ; pll_altpll            ; Untyped                    ;
+; VCO_FREQUENCY_CONTROL         ; AUTO                  ; Untyped                    ;
+; VCO_PHASE_SHIFT_STEP          ; 0                     ; Untyped                    ;
+; WIDTH_CLOCK                   ; 5                     ; Signed Integer             ;
+; WIDTH_PHASECOUNTERSELECT      ; 4                     ; Untyped                    ;
+; USING_FBMIMICBIDIR_PORT       ; OFF                   ; Untyped                    ;
+; DEVICE_FAMILY                 ; Cyclone III           ; Untyped                    ;
+; SCAN_CHAIN_MIF_FILE           ; UNUSED                ; Untyped                    ;
+; SIM_GATE_LOCK_DEVICE_BEHAVIOR ; OFF                   ; Untyped                    ;
+; AUTO_CARRY_CHAINS             ; ON                    ; AUTO_CARRY                 ;
+; IGNORE_CARRY_BUFFERS          ; OFF                   ; IGNORE_CARRY               ;
+; AUTO_CASCADE_CHAINS           ; ON                    ; AUTO_CASCADE               ;
+; IGNORE_CASCADE_BUFFERS        ; OFF                   ; IGNORE_CASCADE             ;
++-------------------------------+-----------------------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Partition Dependent Files                                                                                   ;
++-------------------------------------------+--------------------+---------+----------------------------------+
+; File                                      ; Location           ; Library ; Checksum                         ;
++-------------------------------------------+--------------------+---------+----------------------------------+
+; libraries/megafunctions/aglobal130.inc    ; Quartus II Install ; work    ; 6fc5170a475a9c6f00c3fd7627b30d31 ;
+; libraries/megafunctions/altpll.tdf        ; Quartus II Install ; work    ; 2fbd40fef3231c521503c3b7162ebe3e ;
+; libraries/megafunctions/cycloneii_pll.inc ; Quartus II Install ; work    ; c2ee779f089b03bc181df753ea85b3ef ;
+; libraries/megafunctions/stratix_pll.inc   ; Quartus II Install ; work    ; a9a94c5b0e18105f7ae8c218a67ec9f7 ;
+; libraries/megafunctions/stratixii_pll.inc ; Quartus II Install ; work    ; 6797ab505ed700f1a221e4a213e106a6 ;
+; clockdivision.v                           ; Project Directory  ; work    ; 66ed018de20dedfa5af2cf6f16e86aa7 ;
+; core.v                                    ; Project Directory  ; work    ; cceca4e54a26b95e7717694b96ff897f ;
+; db/pll_altpll.v                           ; Project Directory  ; work    ; 2fae81aff03b70140662651cb603d1c7 ;
+; DDS_CONFIG.v                              ; Project Directory  ; work    ; 5706c3a0278d9d87340deb606e1f6156 ;
+; DDS_UPDATE_CYCLE.v                        ; Project Directory  ; work    ; cf4767913ba2e10e2bae75c6096a0ce2 ;
+; pll.v                                     ; Project Directory  ; work    ; 160cdaff3152ea749dd069c01b2bbb76 ;
+; system.v                                  ; Project Directory  ; work    ; 14146b6bf187849487a64683d31a347a ;
++-------------------------------------------+--------------------+---------+----------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0                                     ;
++-------------------------------------------------+--------------------------------------------------+----------------+
+; Parameter Name                                  ; Value                                            ; Type           ;
++-------------------------------------------------+--------------------------------------------------+----------------+
+; lpm_type                                        ; sld_signaltap                                    ; String         ;
+; sld_node_info                                   ; 805334528                                        ; Untyped        ;
+; SLD_IP_VERSION                                  ; 6                                                ; Signed Integer ;
+; SLD_IP_MINOR_VERSION                            ; 0                                                ; Signed Integer ;
+; SLD_COMMON_IP_VERSION                           ; 0                                                ; Signed Integer ;
+; sld_data_bits                                   ; 17                                               ; Untyped        ;
+; sld_trigger_bits                                ; 17                                               ; Untyped        ;
+; SLD_NODE_CRC_BITS                               ; 32                                               ; Signed Integer ;
+; sld_node_crc_hiword                             ; 23938                                            ; Untyped        ;
+; sld_node_crc_loword                             ; 36855                                            ; Untyped        ;
+; SLD_INCREMENTAL_ROUTING                         ; 0                                                ; Signed Integer ;
+; sld_sample_depth                                ; 16384                                            ; Untyped        ;
+; sld_segment_size                                ; 16384                                            ; Untyped        ;
+; SLD_RAM_BLOCK_TYPE                              ; AUTO                                             ; String         ;
+; sld_state_bits                                  ; 11                                               ; Untyped        ;
+; sld_buffer_full_stop                            ; 1                                                ; Untyped        ;
+; SLD_MEM_ADDRESS_BITS                            ; 7                                                ; Signed Integer ;
+; SLD_DATA_BIT_CNTR_BITS                          ; 4                                                ; Signed Integer ;
+; sld_trigger_level                               ; 1                                                ; Untyped        ;
+; sld_trigger_in_enabled                          ; 0                                                ; Untyped        ;
+; SLD_HPS_TRIGGER_IN_ENABLED                      ; 0                                                ; Signed Integer ;
+; SLD_HPS_TRIGGER_OUT_ENABLED                     ; 0                                                ; Signed Integer ;
+; SLD_HPS_EVENT_ENABLED                           ; 0                                                ; Signed Integer ;
+; SLD_HPS_EVENT_ID                                ; 0                                                ; Signed Integer ;
+; sld_advanced_trigger_entity                     ; sld_reserved_2013system_auto_signaltap_0_1_5303, ; Untyped        ;
+; sld_trigger_level_pipeline                      ; 1                                                ; Untyped        ;
+; sld_enable_advanced_trigger                     ; 1                                                ; Untyped        ;
+; SLD_ADVANCED_TRIGGER_1                          ; NONE                                             ; String         ;
+; SLD_ADVANCED_TRIGGER_2                          ; NONE                                             ; String         ;
+; SLD_ADVANCED_TRIGGER_3                          ; NONE                                             ; String         ;
+; SLD_ADVANCED_TRIGGER_4                          ; NONE                                             ; String         ;
+; SLD_ADVANCED_TRIGGER_5                          ; NONE                                             ; String         ;
+; SLD_ADVANCED_TRIGGER_6                          ; NONE                                             ; String         ;
+; SLD_ADVANCED_TRIGGER_7                          ; NONE                                             ; String         ;
+; SLD_ADVANCED_TRIGGER_8                          ; NONE                                             ; String         ;
+; SLD_ADVANCED_TRIGGER_9                          ; NONE                                             ; String         ;
+; SLD_ADVANCED_TRIGGER_10                         ; NONE                                             ; String         ;
+; sld_inversion_mask_length                       ; 28                                               ; Untyped        ;
+; sld_inversion_mask                              ; 0000000000000000000000000000                     ; Untyped        ;
+; sld_power_up_trigger                            ; 0                                                ; Untyped        ;
+; SLD_STATE_FLOW_MGR_ENTITY                       ; state_flow_mgr_entity.vhd                        ; String         ;
+; sld_state_flow_use_generated                    ; 0                                                ; Untyped        ;
+; sld_current_resource_width                      ; 1                                                ; Untyped        ;
+; sld_attribute_mem_mode                          ; OFF                                              ; Untyped        ;
+; SLD_STORAGE_QUALIFIER_BITS                      ; 1                                                ; Signed Integer ;
+; SLD_STORAGE_QUALIFIER_GAP_RECORD                ; 0                                                ; Signed Integer ;
+; SLD_STORAGE_QUALIFIER_MODE                      ; OFF                                              ; String         ;
+; SLD_STORAGE_QUALIFIER_ENABLE_ADVANCED_CONDITION ; 0                                                ; Signed Integer ;
+; sld_storage_qualifier_inversion_mask_length     ; 0                                                ; Untyped        ;
+; SLD_STORAGE_QUALIFIER_ADVANCED_CONDITION_ENTITY ; basic                                            ; String         ;
+; SLD_STORAGE_QUALIFIER_PIPELINE                  ; 0                                                ; Signed Integer ;
++-------------------------------------------------+--------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; SignalTap II Logic Analyzer Settings                                                                                                                                                                                                                                    ;
++----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
+; Instance Index ; Instance Name    ; Trigger Input Width ; Data Input Width ; Sample Depth ; Segments ; Storage Qualifier Type ; Trigger Flow Control ; Trigger Conditions ; Advanced Trigger Conditions ; Trigger In Used ; Trigger Out Used ; Power-Up Trigger Enabled ;
++----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
+; 0              ; auto_signaltap_0 ; 17                  ; 17               ; 16384        ; 1        ; continuous             ; sequential           ; 1                  ; 1                           ; no              ; no               ; no                       ;
++----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
+
+
++-----------------------------------------------+
+; Elapsed Time Per Partition                    ;
++--------------------------------+--------------+
+; Partition Name                 ; Elapsed Time ;
++--------------------------------+--------------+
+; sld_signaltap:auto_signaltap_0 ; 00:00:03     ;
+; Top                            ; 00:00:03     ;
+; sld_hub:auto_hub               ; 00:00:03     ;
++--------------------------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Full Version
+    Info: Processing started: Sat Jan 18 15:21:04 2014
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off 2013system -c system
+Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
+Info (12021): Found 1 design units, including 1 entities, in source file system.v
+    Info (12023): Found entity 1: system
+Info (12021): Found 1 design units, including 1 entities, in source file core.v
+    Info (12023): Found entity 1: testcore
+Info (12021): Found 1 design units, including 1 entities, in source file dds_config.v
+    Info (12023): Found entity 1: DDS_CONFIG
+Info (12021): Found 1 design units, including 1 entities, in source file dds_update_cycle.v
+    Info (12023): Found entity 1: DDS_UPDATE_CYCLE
+Info (12021): Found 1 design units, including 1 entities, in source file pll.v
+    Info (12023): Found entity 1: pll
+Info (12021): Found 2 design units, including 2 entities, in source file remoteud.v
+    Info (12023): Found entity 1: remoteud_rmtupdt_jhu
+    Info (12023): Found entity 2: remoteud
+Info (12021): Found 1 design units, including 1 entities, in source file fifo.v
+    Info (12023): Found entity 1: fifo
+Info (12021): Found 1 design units, including 1 entities, in source file fifo0.v
+    Info (12023): Found entity 1: fifo0
+Info (12021): Found 1 design units, including 1 entities, in source file lcd.v
+    Info (12023): Found entity 1: LCDDRIVER
+Info (12021): Found 1 design units, including 1 entities, in source file clockdivision.v
+    Info (12023): Found entity 1: clockdivision
+Info (12127): Elaborating entity "system" for the top level hierarchy
+Info (12128): Elaborating entity "DDS_CONFIG" for hierarchy "DDS_CONFIG:b2v_inst"
+Info (10264): Verilog HDL Case Statement information at DDS_CONFIG.v(214): all case item expressions in this case statement are onehot
+Info (12128): Elaborating entity "DDS_UPDATE_CYCLE" for hierarchy "DDS_UPDATE_CYCLE:b2v_inst1"
+Warning (10036): Verilog HDL or VHDL warning at DDS_UPDATE_CYCLE.v(14): object "FSKDATA_BPSK_REG" assigned a value but never read
+Info (12128): Elaborating entity "clockdivision" for hierarchy "clockdivision:b2v_inst2"
+Info (12128): Elaborating entity "pll" for hierarchy "pll:b2v_inst3"
+Info (12128): Elaborating entity "altpll" for hierarchy "pll:b2v_inst3|altpll:altpll_component"
+Info (12130): Elaborated megafunction instantiation "pll:b2v_inst3|altpll:altpll_component"
+Info (12133): Instantiated megafunction "pll:b2v_inst3|altpll:altpll_component" with the following parameter:
+    Info (12134): Parameter "bandwidth_type" = "AUTO"
+    Info (12134): Parameter "clk0_divide_by" = "1"
+    Info (12134): Parameter "clk0_duty_cycle" = "50"
+    Info (12134): Parameter "clk0_multiply_by" = "2"
+    Info (12134): Parameter "clk0_phase_shift" = "0"
+    Info (12134): Parameter "clk1_divide_by" = "5000"
+    Info (12134): Parameter "clk1_duty_cycle" = "50"
+    Info (12134): Parameter "clk1_multiply_by" = "1"
+    Info (12134): Parameter "clk1_phase_shift" = "0"
+    Info (12134): Parameter "compensate_clock" = "CLK0"
+    Info (12134): Parameter "inclk0_input_frequency" = "20000"
+    Info (12134): Parameter "intended_device_family" = "Cyclone III"
+    Info (12134): Parameter "lpm_hint" = "CBX_MODULE_PREFIX=pll"
+    Info (12134): Parameter "lpm_type" = "altpll"
+    Info (12134): Parameter "operation_mode" = "NORMAL"
+    Info (12134): Parameter "pll_type" = "AUTO"
+    Info (12134): Parameter "port_activeclock" = "PORT_UNUSED"
+    Info (12134): Parameter "port_areset" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkbad0" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkbad1" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkloss" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkswitch" = "PORT_UNUSED"
+    Info (12134): Parameter "port_configupdate" = "PORT_UNUSED"
+    Info (12134): Parameter "port_fbin" = "PORT_UNUSED"
+    Info (12134): Parameter "port_inclk0" = "PORT_USED"
+    Info (12134): Parameter "port_inclk1" = "PORT_UNUSED"
+    Info (12134): Parameter "port_locked" = "PORT_USED"
+    Info (12134): Parameter "port_pfdena" = "PORT_UNUSED"
+    Info (12134): Parameter "port_phasecounterselect" = "PORT_UNUSED"
+    Info (12134): Parameter "port_phasedone" = "PORT_UNUSED"
+    Info (12134): Parameter "port_phasestep" = "PORT_UNUSED"
+    Info (12134): Parameter "port_phaseupdown" = "PORT_UNUSED"
+    Info (12134): Parameter "port_pllena" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scanaclr" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scanclk" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scanclkena" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scandata" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scandataout" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scandone" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scanread" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scanwrite" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk0" = "PORT_USED"
+    Info (12134): Parameter "port_clk1" = "PORT_USED"
+    Info (12134): Parameter "port_clk2" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk3" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk4" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk5" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena0" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena1" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena2" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena3" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena4" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena5" = "PORT_UNUSED"
+    Info (12134): Parameter "port_extclk0" = "PORT_UNUSED"
+    Info (12134): Parameter "port_extclk1" = "PORT_UNUSED"
+    Info (12134): Parameter "port_extclk2" = "PORT_UNUSED"
+    Info (12134): Parameter "port_extclk3" = "PORT_UNUSED"
+    Info (12134): Parameter "self_reset_on_loss_lock" = "ON"
+    Info (12134): Parameter "width_clock" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/pll_altpll.v
+    Info (12023): Found entity 1: pll_altpll
+Info (12128): Elaborating entity "pll_altpll" for hierarchy "pll:b2v_inst3|altpll:altpll_component|pll_altpll:auto_generated"
+Info (12128): Elaborating entity "testcore" for hierarchy "testcore:b2v_inst4"
+Warning (10036): Verilog HDL or VHDL warning at core.v(43): object "ENABLED" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at core.v(51): truncated value with size 32 to match size of target (16)
+Warning (10230): Verilog HDL assignment warning at core.v(71): truncated value with size 32 to match size of target (16)
+Warning (10762): Verilog HDL Case Statement warning at core.v(48): can't check case statement for completeness because the case expression has too many possible states
+Info (12021): Found 1 design units, including 1 entities, in source file db/sld_ela_trigger_soo.tdf
+    Info (12023): Found entity 1: sld_ela_trigger_soo
+Info (12021): Found 1 design units, including 1 entities, in source file db/sld_reserved_2013system_auto_signaltap_0_1_5303.v
+    Info (12023): Found entity 1: sld_reserved_2013system_auto_signaltap_0_1_5303
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_3024.tdf
+    Info (12023): Found entity 1: altsyncram_3024
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_ara.tdf
+    Info (12023): Found entity 1: decode_ara
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_anb.tdf
+    Info (12023): Found entity 1: mux_anb
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_orc.tdf
+    Info (12023): Found entity 1: mux_orc
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_4uf.tdf
+    Info (12023): Found entity 1: decode_4uf
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_8fi.tdf
+    Info (12023): Found entity 1: cntr_8fi
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_ifc.tdf
+    Info (12023): Found entity 1: cmpr_ifc
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_2aj.tdf
+    Info (12023): Found entity 1: cntr_2aj
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_bfi.tdf
+    Info (12023): Found entity 1: cntr_bfi
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_p1j.tdf
+    Info (12023): Found entity 1: cntr_p1j
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_efc.tdf
+    Info (12023): Found entity 1: cmpr_efc
+Info (12033): Analysis and Synthesis generated SignalTap II or debug node instance "auto_signaltap_0"
+Info (12206): 3 design partitions require synthesis
+    Info (12211): Partition "Top" requires synthesis because there were changes to its dependent source files
+    Info (12211): Partition "sld_signaltap:auto_signaltap_0" requires synthesis because there were changes to its dependent source files
+    Info (12217): Partition "sld_hub:auto_hub" requires synthesis because there were changes made to the parameters on the partition's root instance
+Info (12209): No design partitions will skip synthesis in the current incremental compilation
+Info (281037): Using 4 processors to synthesize 3 partitions in parallel
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Full Version
+    Info: Processing started: Sat Jan 18 15:21:09 2014
+Info: Command: quartus_map --parallel=1 --helper=0 --partition=Top 2013system -c system
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Full Version
+    Info: Processing started: Sat Jan 18 15:21:09 2014
+Info: Command: quartus_map --parallel=1 --helper=2 --partition=sld_hub:auto_hub 2013system -c system
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Full Version
+    Info: Processing started: Sat Jan 18 15:21:09 2014
+Info: Command: quartus_map --parallel=1 --helper=1 --partition=sld_signaltap:auto_signaltap_0 2013system -c system
+Info (281019): Starting Logic Optimization and Technology Mapping for Partition sld_hub:auto_hub
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "sld_hub:auto_hub|receive[0][0]" is stuck at GND
+Info (286031): Timing-Driven Synthesis is running on partition "sld_hub:auto_hub"
+Info (281019): Starting Logic Optimization and Technology Mapping for Partition sld_signaltap:auto_signaltap_0
+Info (281020): Starting Logic Optimization and Technology Mapping for Top Partition
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (21057): Implemented 201 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 19 input pins
+    Info (21059): Implemented 37 output pins
+    Info (21061): Implemented 145 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 436 megabytes
+    Info: Processing ended: Sat Jan 18 15:21:11 2014
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:04
+Warning (18057): The assignment to disallow NOT gate push-back on register "sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|trigger_out_mode_ff" is ignored
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "FSKDATA_BPSK_HOLD" is stuck at GND
+    Warning (13410): Pin "CONFIGERR" is stuck at GND
+    Warning (13410): Pin "SHK" is stuck at VCC
+Info (286031): Timing-Driven Synthesis is running on partition "Top"
+Info (286031): Timing-Driven Synthesis is running on partition "sld_signaltap:auto_signaltap_0"
+Info (21057): Implemented 900 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 91 input pins
+    Info (21059): Implemented 44 output pins
+    Info (21061): Implemented 731 logic cells
+    Info (21064): Implemented 34 RAM segments
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 436 megabytes
+    Info: Processing ended: Sat Jan 18 15:21:12 2014
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:06
+Info (17049): 129 registers lost all their fanouts during netlist optimizations.
+Info (21057): Implemented 277 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
+    Info (21059): Implemented 22 output pins
+    Info (21061): Implemented 253 logic cells
+    Info (21065): Implemented 1 PLLs
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 436 megabytes
+    Info: Processing ended: Sat Jan 18 15:21:12 2014
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:07
+Info (281038): Finished parallel synthesis of all partitions
+Info (144001): Generated suppressed messages file C:/Users/kangy_000/Documents/GitHub/dds/2013system/output_files/system.map.smsg
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 12 warnings
+    Info: Peak virtual memory: 532 megabytes
+    Info: Processing ended: Sat Jan 18 15:21:13 2014
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:12
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/kangy_000/Documents/GitHub/dds/2013system/output_files/system.map.smsg.
+
+

@@ -1,0 +1,7 @@
+module  DDS_UD(READY,UDIO,OSK)
+input READY;
+
+output UDIO;
+output OSK;
+reg UDIO=0;
+reg OSK=0;

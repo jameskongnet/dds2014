@@ -1,0 +1,14 @@
+Partition Merge Status : Successful - Wed Dec 04 20:44:21 2013
+Quartus II 64-Bit Version : 13.0.0 Build 156 04/24/2013 SJ Full Version
+Revision Name : da1_test
+Top-level Entity Name : da1_test
+Family : Cyclone III
+Total logic elements : 1,020 / 10,320 ( 10 % )
+    Total combinational functions : 625 / 10,320 ( 6 % )
+    Dedicated logic registers : 756 / 10,320 ( 7 % )
+Total registers : 756
+Total pins : 18 / 95 ( 19 % )
+Total virtual pins : 0
+Total memory bits : 311,296 / 423,936 ( 73 % )
+Embedded Multiplier 9-bit elements : 0 / 46 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )
