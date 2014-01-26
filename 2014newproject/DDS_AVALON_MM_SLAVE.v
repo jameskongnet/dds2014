@@ -1,4 +1,9 @@
-module DDS_AVALON_MM_SLAVE(CLK,D,A,WR,CS,RST,F1H,F1L,F2H,F2L,PTW1,PTW2,TRAIANGLE,MODE,DFWH,DFWL,OSK,RAMPRATE,PLLEN,CLKMUILT,PLLRANGE,UDIO,FSKDATA,RELEASE,READY,CEN);
+//TODO: 1.FSK OVERRIDEABLE for triangle bit set in ramped FSK mode to chosen start frquency
+//		  2.OVERRIDEA & OVERRIDED FOR custom insturctions or FURTHER EXPANSION
+//      3.ADD & Trigger interupt signal when counter is ends(refill or not)
+//		  4.
+//		  5.
+module DDS_AVALON_MM_SLAVE(CLK,D,A,WR,CS,RST,F1H,F1L,F2H,F2L,PTW1,PTW2,TRAIANGLE,MODE,DFWH,DFWL,OSK,RAMPRATE,PLLEN,CLKMUILT,PLLRANGE,UDIO,FSKDATA,RELEASE,READY,CEN,UDINT);
 input CLK;
 input [31:0]D;
 input [8:0]A;
@@ -26,8 +31,9 @@ output OSK;
 output UDIO;
 output FSKDATA;
 output CEN;
+output UDINT;
 
-reg   [1:0]UDMODE=0;
+reg   UDMODE=0;
 reg   COUNTEREN=0;
 reg   FSKDATA=0;
 reg   [31:0]UDCYCLE=0;
@@ -51,17 +57,72 @@ reg	PLLRANGE=0;
 reg	enabled=0;
 reg   update=0;
 reg   CEN=0;
-
+reg 	CLKINT=0;
 always @(posedge CLK)
 	begin
+		if(COUNTEREN==1)
+		begin
+			case(UDMODE)
+			0:
+				begin				
+					if(UDCYCLE==0&CLKINT==1&&COUNTEREN==1)
+						begin
+							UDINT<=1;
+							COUNTEREN<=0;
+							UDIO=1;
+						end
+					else if(UDCYCLE!=0)
+						begin
+						UDCYCLE<=UDCYCLE-1;
+						UDIO<=0;
+						end
+				end
+			1:
+				begin
+					if(UDCYCLE==0)
+						begin
+							if(CLKINT==1)
+								begin
+									UDINT<=1;
+								end
+							UDCYCLE<=UDCYCLEBAK;
+							UDIO=1;
+						end
+					else
+						begin
+							UDCYCLE<=UDCYCLE-1;
+							UDIO<=0;
+						end
+				end
+			endcase		
+		end
+		/*
 		if(UDCYCLE==0)
 			begin
 			COUNTEREN<=0;
+			case(UDMODE)
+				2'd0:
+					begin
+					
+					end
+				2'd1:
+					begin
+							UDCYCLE<=UDCYCLEBAK;
+							COUNTEREN<=1;
+							FSKDATA=~FSKDATA;
+							UDIO<=1;
+					end
+				2'd2:
+					begin
+							
+					end
 			end
 		if(UDCYCLE!=0&&COUNTEREN==1)
 			begin
 			UDCYCLE<=UDCYCLE-1;
+			UDIO<=0;
 			end
+		*/
 		if(update==1)
 			begin
 				CEN<=1;
@@ -74,19 +135,18 @@ always @(posedge CLK)
 				UDIO<=1;
 				case(UDMODE)
 				2'd0:
-				0
+					begin
+					
+					end
 				2'd1:
 					begin
-						if(UDCYCLE==0)
-					end
-				2'd2:
-					begin
-						if(UDCYCLE==0)
-							begin
-							FSKDATA=~FSKDATA;
-							end
+					COUNTEREN<=1;
 					end
 				endcase
+			end
+		else
+			begin
+			UDIO<=0;
 			end
 		if(CS==1 && WR==1)
 			begin
@@ -105,17 +165,19 @@ always @(posedge CLK)
 				11:PLLEN<=D[0];
 				12:CLKMUILT<=D[4:0];
 				13:PLLRANGE<=D[0];
-				14:UDMODE<=D[1:0];
+				14:UDMODE<=D[0];
 				15:
 					begin
 					UDCYCLE<=D;
 					UDCYCLEBAK<=D;
 					end
-				16:;
-				17:;
-				18:;
-				19:enabled<=D[0];
-				20:update<=D[0];
+				16:UDIO<=D[0];
+				17:OVERRIDEA<=D[7:0];
+				18:OVERRIDED<=D[7:0];
+				19:OVERRIDEEN<=D[0];
+				20:CLKINT<=D[0];
+				20:enabled<=D[0];
+				21:update<=D[0];
 				endcase
 			end
 		if(RST==1)

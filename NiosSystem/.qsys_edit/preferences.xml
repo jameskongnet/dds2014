@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences>
+ <debug showDebugMenu="0" />
+ <systemtable>
+  <columns>
+   <connections preferredWidth="127" />
+   <irq preferredWidth="34" />
+   <name preferredWidth="286" />
+  </columns>
+ </systemtable>
+ <clocktable>
+  <columns>
+   <clockname preferredWidth="213" />
+   <clocksource preferredWidth="213" />
+   <frequency preferredWidth="199" />
+  </columns>
+ </clocktable>
+ <window width="1100" height="800" x="0" y="0" />
+ <library
+   expandedCategories="Library/Memories and Memory Controllers/External Memory Interfaces,Project,Library/Clock and Reset,Library/Peripherals,Library/Memories and Memory Controllers/On-Chip,Library/Window Bridge,Library/Memories and Memory Controllers/External Memory Interfaces/Flash Interfaces,Library/Microcontroller Peripherals,Library/Verification/Simulation,Library/Memories and Memory Controllers,Library/Memories and Memory Controllers/External Memory Interfaces/Memory Models,Library/Memories and Memory Controllers/External Memory Interfaces/SDRAM Interfaces,Library/Merlin Components,Library/Bridges,Library/Verification/Debug &amp; Performance,Library/Verification,Library/Embedded Processors,Library,Library/Memories and Memory Controllers/External Memory Interfaces/RLDRAM II Interfaces" />
+</preferences>
